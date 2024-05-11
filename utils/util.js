@@ -1,23 +1,23 @@
 const validate = require('./validate.js')
 
 const formatTime = date => {
-		//13位时间戳
-		if (data.toString().length == 10) {
-			data = data * 1000
-		}
-		let date = new Date(data*1)
-		let year = date.getFullYear()
-		let month = date.getMonth() + 1
-		let day = date.getDate()
-		let hour = date.getHours()
-		let minute = date.getMinutes()
-		//补0
-		month = month < 10 ? '0' + month : month
-		day = day < 10 ? '0' + day : day
-		hour = hour < 10 ? '0' + hour : hour
-		minute = minute < 10 ? '0' + minute : minute
-		//格式
-		return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':')
+	//13位时间戳
+	if (data.toString().length == 10) {
+		data = data * 1000
+	}
+	let date = new Date(data * 1)
+	let year = date.getFullYear()
+	let month = date.getMonth() + 1
+	let day = date.getDate()
+	let hour = date.getHours()
+	let minute = date.getMinutes()
+	//补0
+	month = month < 10 ? '0' + month : month
+	day = day < 10 ? '0' + day : day
+	hour = hour < 10 ? '0' + hour : hour
+	minute = minute < 10 ? '0' + minute : minute
+	//格式
+	return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':')
 }
 const formatNumber = n => {
 	n = n.toString()
@@ -55,18 +55,7 @@ const getUrlParam = (path, name) => {
 	if (reg.test(path)) return unescape(RegExp.$2.replace(/\+/g, ' '))
 	return ''
 }
-//判断是否为微信浏览器中运行
-const isWeiXinBrowser = () => {
-	// #ifdef H5
-	// window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
-	let ua = window.navigator.userAgent.toLowerCase()
-	// 通过正则表达式匹配ua中是否含有MicroMessenger字符串
-	if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-		return true
-	}
-	// #endif
-	return false
-}
+
 //判断是否是小程序
 const isMiniPg = () => {
 	let isMiniPg = false
@@ -74,31 +63,6 @@ const isMiniPg = () => {
 	isMiniPg = true
 	// #endif
 	return isMiniPg
-}
-//获取客服端代码
-const getClientCode = () => {
-	let code = {}
-	//#ifdef MP-WEIXIN
-	code = {
-		key: 'MP-WEIXIN',
-		value: '微信小程序',
-	}
-	//#endif
-	//#ifdef H5
-	//普通H5
-	code = {
-		key: 'H5',
-		value: '普通H5',
-	}
-	if (isWeiXinBrowser()) {
-		//微信公众号H5
-		code = {
-			key: 'H5-WX',
-			value: '公众号H5',
-		}
-	}
-	//#endif
-	return code
 }
 //重置url中的参数
 const resetPageUrl = query => {
@@ -157,10 +121,8 @@ module.exports = {
 	filterForm,
 	getCurrentPageUrlWithArgs,
 	getUrlParam,
-	isWeiXinBrowser,
 	isMiniPg,
 	resetPageUrl,
-	getClientCode,
 	imgUrlToBase64,
 	getCurPage,
 	phoneXing,

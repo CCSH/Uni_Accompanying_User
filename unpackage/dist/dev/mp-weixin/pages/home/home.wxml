@@ -1,1 +1,1 @@
-<view class="data-v-92bb8f34"></view>
+<view class="data-v-92bb8f34"><image class="banner data-v-92bb8f34"></image><uni-popup class="pop_agreement data-v-92bb8f34 vue-ref" vue-id="1da55560-1" type="bottom" mask-click="{{false}}" data-ref="popupAgreement" bind:__l="__l" vue-slots="{{['default']}}"><view class="pop_content data-v-92bb8f34">123<navigator open-type="exit" target="miniProgram" class="data-v-92bb8f34">退出</navigator><button data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" bindtap="__e" class="data-v-92bb8f34">同意</button></view></uni-popup></view>

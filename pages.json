@@ -1,9 +1,8 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "专业陪诊"
+				"navigationBarTitleText": "陪诊师"
 			}
 		},
 		{
@@ -25,12 +24,10 @@
 			}
 		}
 	],
-	"subPackages": [
-		{
-			"root": "pagesA",
-			"pages": []
-		}
-	],
+	"subPackages": [{
+		"root": "pagesA",
+		"pages": []
+	}],
 	"preloadRule": {
 		// "pages/home/home": {
 		// "network": "all",
@@ -42,8 +39,7 @@
 		"selectedColor": "#38C4AB",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
-		"list": [
-			{
+		"list": [{
 				"pagePath": "pages/home/home",
 				"iconPath": "static/tabbar_home.png",
 				"selectedIconPath": "static/tabbar_home_h.png",
@@ -63,8 +59,8 @@
 			},
 			{
 				"pagePath": "pages/mine/mine",
-				"iconPath": "static/tabbar_mine.png",
-				"selectedIconPath": "static/tabbar_mine_h.png",
+				"iconPath": "static/tabbar_home.png",
+				"selectedIconPath": "static/tabbar_home_h.png",
 				"text": "我的"
 			}
 		]
