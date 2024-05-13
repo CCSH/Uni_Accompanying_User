@@ -5,7 +5,19 @@
     "pages/message/message",
     "pages/mine/mine"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "pagesA",
+      "pages": [
+        "pages/privacy_agreement/privacy_agreement",
+        "pages/select_city/select_city",
+        "pages/select_hospital/select_hospital",
+        "pages/hospital_detail/hospital_detail",
+        "pages/login/login",
+        "pages/service_detail/service_detail"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#51BBA4"
@@ -42,6 +54,13 @@
       }
     ]
   },
-  "preloadRule": {},
+  "preloadRule": {
+    "pages/home/home": {
+      "network": "all",
+      "packages": [
+        "pagesA"
+      ]
+    }
+  },
   "usingComponents": {}
 }

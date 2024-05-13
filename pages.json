@@ -1,8 +1,11 @@
 {
-	"pages": [{
+	"pages": [
+		{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "陪诊师"
+				"navigationBarTitleText": "专业陪诊",
+				"navigationStyle": "custom",
+				"transparentTitle": "always"
 			}
 		},
 		{
@@ -24,22 +27,66 @@
 			}
 		}
 	],
-	"subPackages": [{
-		"root": "pagesA",
-		"pages": []
-	}],
+	"subPackages": [
+		{
+			"root": "pagesA",
+			"pages": [
+				{
+					"path": "pages/privacy_agreement/privacy_agreement",
+					"style": {
+						"navigationBarTitleText": "隐私协议"
+					}
+				},
+				{
+					"path": "pages/select_city/select_city",
+					"style": {
+						"navigationBarTitleText": "请选择服务城市"
+					}
+				},
+				{
+					"path": "pages/select_hospital/select_hospital",
+					"style": {
+						"navigationBarTitleText": "选择医院"
+					}
+				},
+				{
+					"path": "pages/hospital_detail/hospital_detail",
+					"style": {
+						"navigationBarTitleText": "医院详情"
+					}
+				},
+				{
+					"path": "pages/login/login",
+					"style": {
+						"navigationStyle": "custom",
+						"transparentTitle": "always",
+						"navigationBarTextStyle": "black"
+					}
+				},
+				{
+					"path": "pages/service_detail/service_detail",
+					"style": {
+						"navigationStyle": "custom",
+						"transparentTitle": "always",
+						"navigationBarTextStyle": "black"
+					}
+				}
+			]
+		}
+	],
 	"preloadRule": {
-		// "pages/home/home": {
-		// "network": "all",
-		// "packages": ["pagesA"]
-		// }
+		"pages/home/home": {
+			"network": "all",
+			"packages": ["pagesA"]
+		}
 	},
 	"tabBar": {
 		"color": "#666666",
 		"selectedColor": "#38C4AB",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
-		"list": [{
+		"list": [
+			{
 				"pagePath": "pages/home/home",
 				"iconPath": "static/tabbar_home.png",
 				"selectedIconPath": "static/tabbar_home_h.png",

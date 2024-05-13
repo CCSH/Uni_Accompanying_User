@@ -1,6 +1,9 @@
 {
-  "navigationBarTitleText": "陪诊师",
+  "navigationBarTitleText": "专业陪诊",
+  "navigationStyle": "custom",
+  "transparentTitle": "always",
   "usingComponents": {
+    "drag-button": "/components/drag-button/drag-button",
     "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
   }
 }
