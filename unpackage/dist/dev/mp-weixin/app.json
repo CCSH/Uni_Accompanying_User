@@ -30,26 +30,26 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "iconPath": "static/tabbar_home.png",
-        "selectedIconPath": "static/tabbar_home_h.png",
+        "iconPath": "static/shouye_n.png",
+        "selectedIconPath": "static/shouye_h.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/order/order",
-        "iconPath": "static/tabbar_home.png",
-        "selectedIconPath": "static/tabbar_home_h.png",
+        "iconPath": "static/dingdan_n.png",
+        "selectedIconPath": "static/dingdan_h.png",
         "text": "订单"
       },
       {
         "pagePath": "pages/message/message",
-        "iconPath": "static/tabbar_home.png",
-        "selectedIconPath": "static/tabbar_home_h.png",
+        "iconPath": "static/xiaoxi_n.png",
+        "selectedIconPath": "static/xiaoxi_h.png",
         "text": "消息"
       },
       {
         "pagePath": "pages/mine/mine",
-        "iconPath": "static/tabbar_home.png",
-        "selectedIconPath": "static/tabbar_home_h.png",
+        "iconPath": "static/wode_n.png",
+        "selectedIconPath": "static/wode_h.png",
         "text": "我的"
       }
     ]

@@ -65,3 +65,12 @@ button:active {
 	display: flex;
 	align-items: flex-end;
 }
+
+/* 全局样式 */
+/* 设置导航栏字体为微软雅黑 */
+.uni-nav-bar__title {
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
