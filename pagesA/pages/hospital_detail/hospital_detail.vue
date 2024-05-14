@@ -96,7 +96,7 @@
 						</view>
 					</view>
 				</view>
-				<image class="image_10" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" />
+				<!-- <image class="image_10" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" /> -->
 				<!-- <view class="image-wrapper_1 flex-col">
           <image
             class="label_1"

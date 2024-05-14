@@ -7,15 +7,15 @@
 						<view class="text-wrapper_3 flex-col">
 							<text class="text_6">1</text>
 						</view>
-						<image class="image_4" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngdc9a6cd57eb7b04b922cafc3f711e3952e172f52b1f6600a0b907881f9055b47" />
+						<image class="image_4" referrerpolicy="no-referrer" src="/static/point_line.png" />
 						<view class="text-wrapper_4 flex-col">
 							<text class="text_7">2</text>
 						</view>
-						<image class="image_5" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngc678afd86fd3fd17a1e218fbbd4d41ba1552ceb41ce1413d5eed2d7649a9582b" />
+						<image class="image_5" referrerpolicy="no-referrer" src="/static/point_line.png" />
 						<view class="text-wrapper_5 flex-col">
 							<text class="text_8">3</text>
 						</view>
-						<image class="image_6" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngc678afd86fd3fd17a1e218fbbd4d41ba1552ceb41ce1413d5eed2d7649a9582b" />
+						<image class="image_6" referrerpolicy="no-referrer" src="/static/point_line.png" />
 						<view class="text-wrapper_6 flex-col">
 							<text class="text_9">4</text>
 						</view>
@@ -82,9 +82,7 @@
 						<text class="text_21">立即下单</text>
 					</view>
 				</view>
-				<view class="image-wrapper_2 flex-row">
-					<image class="image_9" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" />
-				</view>
+				<view class="image-wrapper_2 flex-row"></view>
 			</view>
 			<view class="box_9 flex-col">
 				<view class="box_10 flex-col">
