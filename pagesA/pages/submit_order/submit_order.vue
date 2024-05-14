@@ -27,7 +27,7 @@
 						<text class="text_13">服务完成</text>
 					</view>
 				</view>
-				<view class="box_6 flex-row" @click="showServe">
+				<view class="box_6 flex-row" @click="$refs.popup_hospital.open()">
 					<view class="group_4 flex-col"></view>
 					<text class="text_14">检查预约</text>
 					<image class="thumbnail_6" referrerpolicy="no-referrer" src="/static/more_lv@2x.png" />
@@ -92,7 +92,7 @@
 					</view>
 					<view class="box_12 flex-row">
 						<text class="text_23">就诊人</text>
-						<text class="text_24">请选择就诊人</text>
+						<text class="text_24" @click="$refs.popup_patient.open()">请选择就诊人</text>
 						<image class="thumbnail_10" referrerpolicy="no-referrer" src="/static/more_hui@2x.png" />
 					</view>
 				</view>
@@ -115,12 +115,13 @@
 		<!-- 悬浮 -->
 		<drag-button @btnClick="gotoService" :isDock="true" :existTabBar="true"></drag-button>
 		<!-- 弹窗 -->
-		<uni-popup ref="popup_serve" type="bottom" :safe-area="false">
+		<!-- 服务 -->
+		<uni-popup ref="popup_hospital" type="bottom" :safe-area="false">
 			<view class="pop_content">
 				<view class="box_1 flex-col">
 					<view class="block_3 flex-row justify-between">
 						<view class="box_2 flex-col"></view>
-						<image class="thumbnail_1" referrerpolicy="no-referrer" src="/static/guanbi@2x.png" @click="$refs.popup_serve.close()" />
+						<image class="thumbnail_1" referrerpolicy="no-referrer" src="/static/guanbi@2x.png" @click="$refs.popup_hospital.close()" />
 						<text class="text_1">服务项目</text>
 					</view>
 					<view class="block_4 flex-row" @click="serveIndex = 0">
@@ -201,6 +202,95 @@
 				</view>
 			</view>
 		</uni-popup>
+		<!-- 优惠券 -->
+		<uni-popup ref="popup_favorable" type="bottom" :safe-area="false">
+			<view class="popup_favorable">
+				<view class="box_1 flex-col">
+					<view class="group_1 flex-row justify-between">
+						<view class="section_3 flex-col"></view>
+						<image class="thumbnail_1" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng44edaf362a7ebdbd995220172d070d6c91d80ac7d81d588bfd4b0af325be3fdf" />
+						<text class="text_1">选择优惠券</text>
+					</view>
+					<view class="group_2 flex-row">
+						<view class="text-group_1 flex-col">
+							<text class="text_2">陪诊优惠券</text>
+							<text class="text_3">有效期至2024.06.06</text>
+						</view>
+						<view class="text-group_2 flex-col">
+							<view class="text-wrapper_1">
+								<text class="text_4">￥</text>
+								<text class="text_5">100</text>
+							</view>
+							<text class="text_6">满800可用</text>
+						</view>
+						<image class="thumbnail_2" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng02d605f95d347c4ed7d40b288f7327ef51668959f990cb2498d1b1a3fbb7d78f" />
+					</view>
+					<view class="group_3 flex-row justify-between">
+						<view class="box_2 flex-row justify-between">
+							<text class="text_7">优惠</text>
+							<view class="text-wrapper_2">
+								<text class="text_8">￥</text>
+								<text class="text_9">6</text>
+							</view>
+						</view>
+						<text class="text_10">确认</text>
+					</view>
+					<image class="image_1" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" />
+				</view>
+			</view>
+		</uni-popup>
+		<!-- 就诊人 -->
+		<uni-popup ref="popup_patient" type="bottom" :safe-area="false" class="popup_patient" background-color="#fff" borderRadius="38rpx   38rpx   0rpx   0rpx">
+			<view class="block_2 flex-col">
+				<view class="block_3 flex-row justify-between">
+					<view class="box_3 flex-col"></view>
+					<image class="thumbnail_1" referrerpolicy="no-referrer" src="/static/guanbi@2x.png" @click="$refs.popup_patient.close()" />
+					<text class="text_1">选择就诊人</text>
+				</view>
+				<image class="image_1" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPnga75db33691073ee7b893a76ea8943e1b6ba032ff3f782cebe482fdbf4b1fb372" />
+				<view
+					class="block_4 flex-row"
+					@click="
+						patientIndex = 0
+						$refs.popup_patient.close()
+					">
+					<view class="image-text_1 flex-row justify-between">
+						<image :src="patientIndex == 0 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" class="box_4 flex-col" />
+						<view class="text-group_1 flex-col">
+							<text class="text_2">赵洪莉</text>
+							<text class="text_3">1306***********024</text>
+						</view>
+					</view>
+					<view class="text-wrapper_1 flex-col">
+						<text class="text_4">本人</text>
+						<text class="text_5">193****95</text>
+					</view>
+					<image class="thumbnail_2" referrerpolicy="no-referrer" src="/static/bianji@2x.png" />
+				</view>
+				<view
+					class="block_4 flex-row"
+					@click="
+						patientIndex = 1
+						$refs.popup_patient.close()
+					">
+					<view class="image-text_1 flex-row justify-between">
+						<image :src="patientIndex == 1 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" class="box_4 flex-col" />
+						<view class="text-group_1 flex-col">
+							<text class="text_2">赵洪莉2</text>
+							<text class="text_3">1306***********024</text>
+						</view>
+					</view>
+					<view class="text-wrapper_1 flex-col">
+						<text class="text_4">本人</text>
+						<text class="text_5">193****95</text>
+					</view>
+					<image class="thumbnail_2" referrerpolicy="no-referrer" src="/static/bianji@2x.png" />
+				</view>
+				<view class="text-wrapper_2 flex-col">
+					<text class="text_6">添加就诊人</text>
+				</view>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 <script>
@@ -214,16 +304,13 @@ export default {
 		return {
 			isAgreement: true,
 			serveIndex: 0,
+			patientIndex: 0,
 			constants: {},
 		}
 	},
 	methods: {
 		gotoService() {
-			uni.showToast({
-				title: '咨询客服',
-				icon: 'none',
-				duration: 1000,
-			})
+			uni.navigateTo({ url: '/pagesA/pages/customer_service/customer_service' })
 		},
 		showAgreement() {
 			uni.navigateTo({ url: '/pagesA/pages/privacy_agreement/privacy_agreement' })
@@ -1182,7 +1269,7 @@ export default {
 				}
 			}
 			.image-text_10 {
-				margin: 8rpx 0 6rpx 235rpx;
+				margin: 8rpx 0 6rpx 250rpx;
 				.thumbnail_7 {
 					width: 24rpx;
 					height: 24rpx;
@@ -1205,6 +1292,333 @@ export default {
 			height: 10rpx;
 			align-self: center;
 			margin-top: 90rpx;
+		}
+	}
+}
+
+.popup_favorable {
+	background: #fff;
+	.box_1 {
+		background-color: rgba(255, 255, 255, 1);
+		border-radius: 20px 20px 0px 0px;
+		padding: 44rpx 22rpx 16rpx 22rpx;
+		.group_1 {
+			position: relative;
+			width: 674rpx;
+			margin: 0 10rpx 0 22rpx;
+			padding: 12rpx 0 2rpx 54rpx;
+			.section_3 {
+				background-color: rgba(165, 229, 215, 1);
+				width: 80rpx;
+				height: 20rpx;
+				margin-top: 14rpx;
+			}
+			.thumbnail_1 {
+				width: 24rpx;
+				height: 24rpx;
+				margin-bottom: 10rpx;
+			}
+			.text_1 {
+				position: absolute;
+				left: 0;
+				top: 0;
+				overflow-wrap: break-word;
+				color: rgba(51, 51, 51, 1);
+				font-size: 34rpx;
+				font-family: PingFangSC-Semibold;
+				font-weight: 600;
+				text-align: right;
+				white-space: nowrap;
+				line-height: 48rpx;
+			}
+		}
+		.group_2 {
+			background-color: rgba(228, 244, 241, 0.3);
+			border-radius: 5px;
+			border: 1px solid rgba(80, 186, 174, 1);
+			margin-top: 38rpx;
+			padding: 38rpx 26rpx 36rpx 24rpx;
+			.text-group_1 {
+				margin-top: 6rpx;
+				.text_2 {
+					overflow-wrap: break-word;
+					color: rgba(51, 51, 51, 1);
+					font-size: 34rpx;
+					font-family: PingFangSC-Semibold;
+					font-weight: 600;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 48rpx;
+					margin-right: 54rpx;
+				}
+				.text_3 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+					margin-top: 10rpx;
+				}
+			}
+			.text-group_2 {
+				margin-left: 246rpx;
+				.text-wrapper_1 {
+					width: 100rpx;
+					height: 60rpx;
+					overflow-wrap: break-word;
+					font-size: 0;
+					font-family: PingFangSC-Semibold;
+					font-weight: 600;
+					text-align: right;
+					line-height: 40rpx;
+					align-self: center;
+					.text_4 {
+						height: 60rpx;
+						overflow-wrap: break-word;
+						color: rgba(80, 186, 174, 1);
+						font-size: 28rpx;
+						font-family: PingFangSC-Semibold;
+						font-weight: 600;
+						text-align: left;
+						line-height: 40rpx;
+					}
+					.text_5 {
+						height: 60rpx;
+						overflow-wrap: break-word;
+						color: rgba(80, 186, 174, 1);
+						font-size: 44rpx;
+						font-family: PingFangSC-Semibold;
+						font-weight: 600;
+						text-align: left;
+						white-space: nowrap;
+						line-height: 40rpx;
+					}
+				}
+				.text_6 {
+					overflow-wrap: break-word;
+					color: rgba(80, 186, 174, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: right;
+					white-space: nowrap;
+					line-height: 34rpx;
+					margin-top: 4rpx;
+				}
+			}
+			.thumbnail_2 {
+				width: 32rpx;
+				height: 32rpx;
+				margin: 32rpx 0 34rpx 34rpx;
+			}
+		}
+		.group_3 {
+			background-color: rgba(80, 186, 174, 1);
+			border-radius: 22px;
+			width: 706rpx;
+			border: 1px solid rgba(80, 186, 174, 1);
+			margin-top: 90rpx;
+			padding-right: 64rpx;
+			.box_2 {
+				background-color: rgba(255, 255, 255, 1);
+				border-radius: 22px 0px 0px 22px;
+				width: 532rpx;
+				border: 1px solid rgba(80, 186, 174, 1);
+				padding: 8rpx 360rpx 16rpx 46rpx;
+				.text_7 {
+					overflow-wrap: break-word;
+					color: rgba(80, 186, 174, 1);
+					font-size: 28rpx;
+					font-family: PingFangSC-Semibold;
+					font-weight: 600;
+					text-align: right;
+					white-space: nowrap;
+					line-height: 40rpx;
+					margin-top: 14rpx;
+				}
+				.text-wrapper_2 {
+					width: 56rpx;
+					height: 60rpx;
+					overflow-wrap: break-word;
+					font-size: 0;
+					font-family: PingFangSC-Semibold;
+					font-weight: 600;
+					text-align: right;
+					line-height: 40rpx;
+					.text_8 {
+						height: 60rpx;
+						overflow-wrap: break-word;
+						color: rgba(80, 186, 174, 1);
+						font-size: 28rpx;
+						font-family: PingFangSC-Semibold;
+						font-weight: 600;
+						text-align: left;
+						line-height: 40rpx;
+					}
+					.text_9 {
+						height: 60rpx;
+						overflow-wrap: break-word;
+						color: rgba(80, 186, 174, 1);
+						font-size: 44rpx;
+						font-family: PingFangSC-Semibold;
+						font-weight: 600;
+						text-align: left;
+						white-space: nowrap;
+						line-height: 40rpx;
+					}
+				}
+			}
+			.text_10 {
+				overflow-wrap: break-word;
+				color: rgba(255, 255, 255, 1);
+				font-size: 28rpx;
+				font-family: PingFangSC-Semibold;
+				font-weight: 600;
+				text-align: right;
+				white-space: nowrap;
+				line-height: 40rpx;
+				margin-top: 24rpx;
+			}
+		}
+		.image_1 {
+			width: 268rpx;
+			height: 10rpx;
+			align-self: center;
+			margin-top: 42rpx;
+		}
+	}
+}
+
+.popup_patient {
+	.block_2 {
+		background: url(https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng6203202cec23b2c96f312596785bfae5b50899f78721ba965373f0ca380c9d37) 100% no-repeat;
+		background-size: 100% 100%;
+		padding: 58rpx 0 18rpx 0;
+		.block_3 {
+			position: relative;
+			width: 680rpx;
+			margin: 0 32rpx 0 38rpx;
+			padding: 10rpx 0 4rpx 24rpx;
+			.box_3 {
+				background-color: rgba(165, 229, 215, 1);
+				border-radius: 5px;
+				width: 80rpx;
+				height: 20rpx;
+				margin-top: 14rpx;
+			}
+			.thumbnail_1 {
+				width: 26rpx;
+				height: 26rpx;
+				// border: 1px solid rgba(153, 153, 153, 1);
+				margin-bottom: 8rpx;
+			}
+			.text_1 {
+				position: absolute;
+				left: 0;
+				top: 0;
+				overflow-wrap: break-word;
+				color: rgba(69, 69, 69, 1);
+				font-size: 34rpx;
+				font-family: PingFangSC-Semibold;
+				font-weight: 600;
+				text-align: left;
+				white-space: nowrap;
+				line-height: 48rpx;
+			}
+		}
+		.image_1 {
+			width: 750rpx;
+			height: 2rpx;
+			margin-top: 50rpx;
+		}
+		.block_4 {
+			margin: 46rpx 36rpx 0 30rpx;
+			.image-text_1 {
+				width: 298rpx;
+				.box_4 {
+					background-color: rgba(255, 255, 255, 1);
+					border-radius: 50%;
+					width: 36rpx;
+					height: 36rpx;
+					// border: 1px solid rgba(220, 220, 220, 1);
+					margin: 32rpx 0 32rpx 0;
+				}
+				.text-group_1 {
+					.text_2 {
+						overflow-wrap: break-word;
+						color: rgba(69, 69, 69, 1);
+						font-size: 28rpx;
+						font-weight: normal;
+						text-align: left;
+						white-space: nowrap;
+						line-height: 40rpx;
+						margin-right: 146rpx;
+					}
+					.text_3 {
+						overflow-wrap: break-word;
+						color: rgba(102, 102, 102, 1);
+						font-size: 24rpx;
+						font-weight: normal;
+						text-align: left;
+						white-space: nowrap;
+						line-height: 34rpx;
+						margin-top: 26rpx;
+					}
+				}
+			}
+			.text-wrapper_1 {
+				margin-left: 2rpx;
+				.text_4 {
+					overflow-wrap: break-word;
+					color: rgba(69, 69, 69, 1);
+					font-size: 28rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 40rpx;
+					margin-right: 106rpx;
+				}
+				.text_5 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+					margin: 26rpx 0 0 46rpx;
+				}
+			}
+			.thumbnail_2 {
+				width: 28rpx;
+				height: 28rpx;
+				margin: 34rpx 0 38rpx 194rpx;
+			}
+		}
+		.text-wrapper_2 {
+			background-color: rgba(80, 186, 174, 1);
+			border-radius: 19px;
+			align-self: center;
+			margin-top: 580rpx;
+			width: 690rpx;
+			padding: 18rpx 274rpx 18rpx 276rpx;
+			.text_6 {
+				overflow-wrap: break-word;
+				color: rgba(254, 254, 254, 1);
+				font-size: 28rpx;
+				font-family: PingFangSC-Medium;
+				font-weight: 500;
+				text-align: left;
+				white-space: nowrap;
+				line-height: 40rpx;
+			}
+		}
+		.image_2 {
+			width: 268rpx;
+			height: 10rpx;
+			align-self: center;
+			margin-top: 44rpx;
 		}
 	}
 }

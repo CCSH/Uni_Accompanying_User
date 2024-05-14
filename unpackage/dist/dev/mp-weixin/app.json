@@ -14,6 +14,7 @@
         "pages/select_hospital/select_hospital",
         "pages/hospital_detail/hospital_detail",
         "pages/submit_order/submit_order",
+        "pages/customer_service/customer_service",
         "pages/login/login",
         "pages/service_detail/service_detail"
       ]

@@ -13,34 +13,6 @@
           "query": "",
           "launchMode": "default",
           "scene": null
-        },
-        {
-          "name": "pagesA/pages/service_detail/service_detail",
-          "pathName": "pagesA/pages/service_detail/service_detail",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/select_city/select_city",
-          "pathName": "pagesA/pages/select_city/select_city",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/login/login",
-          "pathName": "pagesA/pages/login/login",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/privacy_agreement/privacy_agreement",
-          "pathName": "pagesA/pages/privacy_agreement/privacy_agreement",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
         }
       ]
     }

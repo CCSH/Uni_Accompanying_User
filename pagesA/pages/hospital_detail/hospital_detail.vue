@@ -145,11 +145,8 @@ export default {
 			uni.navigateTo({ url: '/pagesA/pages/service_detail/service_detail' })
 		},
 		gotoIM() {
-			uni.showToast({
-				title: '咨询客服',
-				icon: 'none',
-				duration: 1000,
-			})
+					uni.navigateTo({ url: '/pagesA/pages/customer_service/customer_service' })
+
 		},
 	},
 }
