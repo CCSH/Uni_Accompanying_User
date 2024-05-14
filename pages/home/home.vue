@@ -10,7 +10,7 @@
 				</view>
 			</view>
 			<!-- banner -->
-			<view class="box_1 flex-col"></view>
+			<image src="/static/img_banner@2x.png" mode="widthFix" class="box_1 flex-col" />
 			<view class="box_3 flex-col">
 				<view class="block_1 flex-row justify-between">
 					<view class="image-text_2 flex-row justify-between">
@@ -40,6 +40,7 @@
 				</view>
 			</view>
 			<view class="box_5 flex-col">
+				<text class="text_11">三甲医院</text>
 				<view class="section_2 flex-col"></view>
 				<view class="section_3 flex-row" @click="gotoHospital">
 					<view class="image-text_6 flex-row justify-between">
@@ -71,7 +72,36 @@
 						</view>
 					</view>
 				</view>
-				<text class="text_11">三甲医院</text>
+				<view class="section_4 flex-row" @click="gotoHospital">
+					<view class="image-text_8 flex-row justify-between">
+						<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/dingwei@2x.png" />
+						<text class="text-group_8">成都市二环路北二段82号</text>
+					</view>
+					<view class="image-text_9 flex-row justify-between">
+						<view class="group_11 flex-col"></view>
+						<view class="group_12 flex-col">
+							<text class="text-group_9">成都大学附属医院</text>
+							<view class="text-wrapper_5 flex-col">
+								<text class="text_10">三甲医院</text>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="section_4 flex-row" @click="gotoHospital">
+					<view class="image-text_8 flex-row justify-between">
+						<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/dingwei@2x.png" />
+						<text class="text-group_8">成都市二环路北二段82号</text>
+					</view>
+					<view class="image-text_9 flex-row justify-between">
+						<view class="group_11 flex-col"></view>
+						<view class="group_12 flex-col">
+							<text class="text-group_9">成都大学附属医院</text>
+							<view class="text-wrapper_5 flex-col">
+								<text class="text_10">三甲医院</text>
+							</view>
+						</view>
+					</view>
+				</view>
 			</view>
 		</view>
 		<!-- 悬浮 -->
@@ -245,8 +275,6 @@ export default {
 	overflow: hidden;
 	.box_1 {
 		border-radius: 9px;
-		// background-image: url("/static/img_banner@2x.png");
-		background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/960414c5569c403c947af37bfe1e427a_mergeImage.png);
 		position: absolute;
 		left: 20rpx;
 		top: 188rpx;
@@ -521,9 +549,9 @@ export default {
 				line-height: 48rpx;
 			}
 			.section_5 {
+				// position: fixed;
 				box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
 				border-radius: 7px;
-				background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/c286e773fa1d41e18e012251dd76f2c2_mergeImage.png);
 				position: absolute;
 				left: 654rpx;
 				top: 250rpx;

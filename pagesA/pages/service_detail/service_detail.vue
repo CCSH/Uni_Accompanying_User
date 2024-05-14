@@ -2,18 +2,8 @@
 	<view class="page flex-col">
 		<view class="box_3 flex-col">
 			<view class="block_1 flex-col">
-				<!-- <view class="group_2 flex-row">
-					<view class="text-wrapper_3">
-						<text class="text_3">9:4</text>
-						<text class="text_4">1</text>
-					</view>
-					<image class="thumbnail_1" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb0bfcfcd7d4aeb38c43b16f73c2c736af22643ff20ae47082ec82556faff4126" />
-					<image class="thumbnail_2" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngdc0f3d1e17df748cc02795b49ff804887c5a23cd56d8747c9480e78b8fee1aa1" />
-					<image class="image_1" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng22e91f3804b2e0d59fbaaf765f7be7149d2587679e5a419fd8b9079529d97c7e" />
-				</view> -->
 				<view class="image-wrapper_1 flex-row justify-between">
 					<image class="thumbnail_3" referrerpolicy="no-referrer" src="/static/jiantou_zuo@2x.png" @click="goBack" />
-					<!-- <image class="image_2" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPnged06853d93958f652e6b4fe35a3a1e732afd37efb1d3a5384a2e4b3242976ffc" /> -->
 				</view>
 			</view>
 			<view class="block_5 flex-col">
@@ -42,11 +32,11 @@
 				<image v-if="index == 0" src="/static/img_fuwuneirong@2x.png" class="box_1 flex-col" mode="widthFix" />
 				<image v-if="index == 1" src="/static/fuwuxuzhi@2x.png" class="box_1 flex-col" mode="widthFix"/>
 			</view>
-			<view class="block_4 flex-col">
+			<view class="block_4 flex-col" @click="gotoOrder">
 				<view class="text-wrapper_4 flex-col">
 					<text class="text_6">立即预约￥268.00</text>
 				</view>
-				<image class="image_3" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" />
+				<!-- <image class="image_3" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" /> -->
 			</view>
 		</view>
 	</view>
@@ -68,6 +58,9 @@ export default {
 		handleClick(val) {
 			this.index = val
 		},
+		gotoOrder(){
+			uni.navigateTo({ url: '/pagesA/pages/submit_order/submit_order' })
+		}
 	},
 }
 </script>

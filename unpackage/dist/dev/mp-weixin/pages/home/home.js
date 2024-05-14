@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/home/home"],{
 
-/***/ 34:
+/***/ 128:
 /*!*****************************************************************************************!*\
   !*** /Users/csh/Desktop/项目/YH_Accompanying_User/main.js?{"page":"pages%2Fhome%2Fhome"} ***!
   \*****************************************************************************************/
@@ -101,10 +101,10 @@ var components
 try {
   components = {
     dragButton: function () {
-      return __webpack_require__.e(/*! import() | components/drag-button/drag-button */ "components/drag-button/drag-button").then(__webpack_require__.bind(null, /*! @/components/drag-button/drag-button.vue */ 100))
+      return __webpack_require__.e(/*! import() | components/drag-button/drag-button */ "components/drag-button/drag-button").then(__webpack_require__.bind(null, /*! @/components/drag-button/drag-button.vue */ 108))
     },
     uniPopup: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 107))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 115))
     },
   }
 } catch (e) {
@@ -169,7 +169,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var dragButton = function dragButton() {
   __webpack_require__.e(/*! require.ensure | components/drag-button/drag-button */ "components/drag-button/drag-button").then((function () {
-    return resolve(__webpack_require__(/*! @/components/drag-button/drag-button.vue */ 100));
+    return resolve(__webpack_require__(/*! @/components/drag-button/drag-button.vue */ 108));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -325,5 +325,5 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[[34,"common/runtime","common/vendor"]]]);
+},[[128,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/home/home.js.map

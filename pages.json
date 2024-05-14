@@ -56,6 +56,13 @@
 					}
 				},
 				{
+					"path": "pages/submit_order/submit_order",
+					"style": {
+						"navigationBarTitleText": "填写订单"
+					}
+				},
+				
+				{
 					"path": "pages/login/login",
 					"style": {
 						"navigationStyle": "custom",

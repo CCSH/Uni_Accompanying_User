@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/pages/submit_order/submit_order",
+          "pathName": "pagesA/pages/submit_order/submit_order",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/pages/service_detail/service_detail",
           "pathName": "pagesA/pages/service_detail/service_detail",
           "query": "",

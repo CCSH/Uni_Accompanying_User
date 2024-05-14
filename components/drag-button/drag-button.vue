@@ -102,6 +102,7 @@ export default {
 				} else {
 					this.left = edgeRigth
 				}
+				console.log('ccsh', this.left)
 			}
 
 			this.isMove = false
@@ -126,7 +127,7 @@ export default {
 	font-size: $uni-font-size-sm;
 	position: fixed;
 	z-index: 999999;
-	image{
+	image {
 		width: 100%;
 		height: 100%;
 	}
