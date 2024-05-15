@@ -3,7 +3,7 @@
 		<view class="group_1 flex-col">
 			<view class="section_5 flex-col">
 				<view class="box_3 flex-row">
-					<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" />
+					<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" mode=“aspectFit”/>
 					<input class="image-text_2 flex-row justify-between text-group_1" placeholder="搜索" />
 				</view>
 				<view class="list_2 flex-col">

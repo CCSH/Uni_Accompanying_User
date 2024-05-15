@@ -48,7 +48,7 @@
 						就诊时间
 					</text>
 					<view class="text-wrapper_8 flex-col">
-						<text class="paragraph_2">
+						<text class="paragraph_2" @click="$refs.popup_yiyuan.open()">
 							成都416医院
 							<br />
 						</text>
@@ -56,7 +56,7 @@
 							请选择就诊室
 							<br />
 						</text>
-						<uni-datetime-picker class="paragraph_3" v-model="single"><view style="font-size:28rpx;color:#999999">请选择就诊时间</view></uni-datetime-picker>
+						<uni-datetime-picker class="paragraph_3" v-model="single"><view style="font-size: 28rpx; color: #999999">请选择就诊时间</view></uni-datetime-picker>
 					</view>
 					<view class="image-wrapper_1 flex-col">
 						<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/more_hui@2x.png" />
@@ -346,6 +346,107 @@
 				<image class="image_5" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" />
 			</view>
 		</uni-popup>
+		<!-- 选择医院 -->
+		<uni-popup ref="popup_yiyuan" type="bottom" :safe-area="false" class="popup_yiyuan" background-color="#fff" borderRadius="38rpx   38rpx   0rpx   0rpx">
+			<view class="box_3 flex-col">
+				<view class="group_1 flex-row justify-between">
+					<view class="section_1 flex-col"></view>
+					<image class="thumbnail_1" referrerpolicy="no-referrer" src="/static/guanbi@2x.png" @click="$refs.popup_yiyuan.close()" />
+					<text class="text_1">就诊医院</text>
+				</view>
+				<view class="group_2 flex-row">
+					<view class="image-text_1 flex-row justify-between">
+						<image class="thumbnail_2" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" mode="aspectFit"/>
+						<input class="text-group_1" placeholder="请输入医院名称" />
+					</view>
+				</view>
+				<view
+					class="group_3 flex-row justify-between"
+					@click="
+						yiyuanIndex = 0
+						$refs.popup_yiyuan.close()
+					">
+					<image :src="yiyuanIndex == 0 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" class="box_4 flex-col" />
+					<view class="image-text_2 flex-row justify-between">
+						<image class="thumbnail_3" referrerpolicy="no-referrer" src="/static/dingwei@2x.png" />
+						<text class="text-group_2">成都市新津区龙蟠路509路</text>
+					</view>
+					<view class="image-text_3 flex-row justify-between">
+						<view class="group_4 flex-col"></view>
+						<text class="text-group_3">四川省骨科医院（天府院区）</text>
+					</view>
+				</view>
+				<image class="image_1" referrerpolicy="no-referrer" src="" />
+				<view
+					class="group_5 flex-row justify-between"
+					@click="
+						yiyuanIndex = 1
+						$refs.popup_yiyuan.close()
+					">
+					<image :src="yiyuanIndex == 1 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" class="box_4 flex-col" />
+					<view class="image-text_4 flex-row justify-between">
+						<image class="thumbnail_5" referrerpolicy="no-referrer" src="/static/dingwei@2x.png" />
+						<text class="text-group_4">成都市武侯区一环路西一段132号</text>
+					</view>
+					<view class="image-text_5 flex-row justify-between">
+						<view class="group_6 flex-col"></view>
+						<text class="text-group_5">四川省骨科医院</text>
+					</view>
+				</view>
+				<image class="image_2" referrerpolicy="no-referrer" src="" />
+				<view
+					class="group_7 flex-row justify-between"
+					@click="
+						yiyuanIndex = 2
+						$refs.popup_yiyuan.close()
+					">
+					<image :src="yiyuanIndex == 2 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" class="box_4 flex-col" />
+					<view class="image-text_6 flex-row justify-between">
+						<image class="thumbnail_6" referrerpolicy="no-referrer" src="/static/dingwei@2x.png" />
+						<text class="text-group_6">成都市二环路北四段4号</text>
+					</view>
+					<view class="image-text_7 flex-row justify-between">
+						<view class="box_5 flex-col"></view>
+						<text class="text-group_7">成都416医院</text>
+					</view>
+				</view>
+				<image class="image_3" referrerpolicy="no-referrer" src="" />
+				<view
+					class="group_9 flex-row justify-between"
+					@click="
+						yiyuanIndex = 3
+						$refs.popup_yiyuan.close()
+					">
+					<image :src="yiyuanIndex == 3 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" class="box_4 flex-col" />
+					<view class="image-text_8 flex-row justify-between">
+						<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/dingwei@2x.png" />
+						<text class="text-group_8">成都市二环路北二段82号</text>
+					</view>
+					<view class="image-text_9 flex-row justify-between">
+						<view class="group_10 flex-col"></view>
+						<text class="text-group_9">成都大学附属医院</text>
+					</view>
+				</view>
+				<image class="image_4" referrerpolicy="no-referrer" src="" />
+				<view
+					class="group_11 flex-row justify-between"
+					@click="
+						yiyuanIndex = 4
+						$refs.popup_yiyuan.close()
+					">
+					<image :src="yiyuanIndex == 4 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" class="box_4 flex-col" />
+					<view class="image-text_10 flex-row justify-between">
+						<image class="thumbnail_8" referrerpolicy="no-referrer" src="/static/dingwei@2x.png" />
+						<text class="text-group_10">四川省成都市蓉都大道天回路270号</text>
+					</view>
+					<view class="image-text_11 flex-row justify-between">
+						<view class="box_7 flex-col"></view>
+						<text class="text-group_11">成都军区总医院</text>
+					</view>
+				</view>
+				<image class="image_5" referrerpolicy="no-referrer" src="" />
+			</view>
+		</uni-popup>
 	</view>
 </template>
 <script>
@@ -361,6 +462,7 @@ export default {
 			serveIndex: 0,
 			patientIndex: 0,
 			patientLeft: 0,
+			yiyuanIndex: 0,
 			single: new Date(),
 			constants: {},
 		}
@@ -384,8 +486,8 @@ export default {
 			})
 			setTimeout(() => {
 				uni.reLaunch({ url: '/pages/home/home' })
-			}, 1000);
-		}
+			}, 1000)
+		},
 	},
 }
 </script>
@@ -1831,5 +1933,384 @@ export default {
 }
 /deep/.uni-datetime-picker-btn-text {
 	color: #50baae !important;
+}
+
+.popup_yiyuan {
+	.box_4 {
+		background-color: rgba(255, 255, 255, 1);
+		border-radius: 50%;
+		width: 36rpx;
+		height: 36rpx;
+		border: 1px solid rgba(220, 220, 220, 1);
+		margin-bottom: 28rpx;
+	}
+	.box_3 {
+		background: transparent;
+		padding: 62rpx 30rpx 18rpx 30rpx;
+		.group_1 {
+			position: relative;
+			width: 680rpx;
+			margin: 0 2rpx 0 8rpx;
+			padding: 10rpx 0 4rpx 24rpx;
+			.section_1 {
+				background-color: rgba(165, 229, 215, 1);
+				border-radius: 5px;
+				width: 80rpx;
+				height: 20rpx;
+				margin-top: 14rpx;
+			}
+			.thumbnail_1 {
+				width: 26rpx;
+				height: 26rpx;
+				// border: 1px solid rgba(153, 153, 153, 1);
+				margin-bottom: 8rpx;
+			}
+			.text_1 {
+				position: absolute;
+				left: 0;
+				top: 0;
+				overflow-wrap: break-word;
+				color: rgba(69, 69, 69, 1);
+				font-size: 34rpx;
+				font-family: PingFangSC-Semibold;
+				font-weight: 600;
+				text-align: left;
+				white-space: nowrap;
+				line-height: 48rpx;
+			}
+		}
+		.group_2 {
+			background-color: rgba(255, 255, 255, 1);
+			border-radius: 4px;
+			border: 1px solid rgba(230, 230, 230, 1);
+			margin-top: 44rpx;
+			padding: 18rpx 462rpx 14rpx 16rpx;
+			.image-text_1 {
+				width: 208rpx;
+				.thumbnail_2 {
+					width: 30rpx;
+					height: 30rpx;
+					margin: 2rpx 0 2rpx 0;
+				}
+				.text-group_1 {
+					margin-left: 10rpx;
+					overflow-wrap: break-word;
+					color: rgba(153, 153, 153, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+				}
+			}
+		}
+		.group_3 {
+			position: relative;
+			width: 530rpx;
+			margin: 52rpx 160rpx 0 0;
+			padding: 28rpx 52rpx 0 0;
+
+			.image-text_2 {
+				width: 312rpx;
+				margin-top: 30rpx;
+				.thumbnail_3 {
+					width: 22rpx;
+					height: 28rpx;
+					margin: 2rpx 0 4rpx 0;
+				}
+				.text-group_2 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+				}
+			}
+			.image-text_3 {
+				position: absolute;
+				left: 66rpx;
+				top: 0;
+				width: 464rpx;
+				height: 86rpx;
+				.group_4 {
+					border-radius: 4px;
+					background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/3e1a9f8b6cac489c9fe88f0b54761701_mergeImage.png);
+					width: 80rpx;
+					height: 80rpx;
+					margin-top: 6rpx;
+				}
+				.text-group_3 {
+					overflow-wrap: break-word;
+					color: rgba(51, 51, 51, 1);
+					font-size: 28rpx;
+					font-family: PingFangSC-Medium;
+					font-weight: 500;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 40rpx;
+				}
+			}
+		}
+		.image_1 {
+			width: 616rpx;
+			height: 4rpx;
+			margin: 40rpx 12rpx 0 62rpx;
+			background: #e6e6e6;
+		}
+		.group_5 {
+			position: relative;
+			width: 546rpx;
+			padding-top: 28rpx;
+			margin: 36rpx 144rpx 0 0;
+			.thumbnail_4 {
+				width: 36rpx;
+				height: 36rpx;
+				border: 1px solid rgba(77, 187, 177, 1);
+				margin-bottom: 28rpx;
+			}
+			.image-text_4 {
+				width: 380rpx;
+				margin-top: 30rpx;
+				.thumbnail_5 {
+					width: 22rpx;
+					height: 28rpx;
+					margin: 2rpx 0 4rpx 0;
+				}
+				.text-group_4 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+				}
+			}
+			.image-text_5 {
+				position: absolute;
+				left: 66rpx;
+				top: 0;
+				width: 296rpx;
+				height: 86rpx;
+				.group_6 {
+					border-radius: 4px;
+					background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/4afef58c13274e229ba0d5aaa045d8d4_mergeImage.png);
+					width: 80rpx;
+					height: 80rpx;
+					margin-top: 6rpx;
+				}
+				.text-group_5 {
+					overflow-wrap: break-word;
+					color: rgba(51, 51, 51, 1);
+					font-size: 28rpx;
+					font-family: PingFangSC-Medium;
+					font-weight: 500;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 40rpx;
+				}
+			}
+		}
+		.image_2 {
+			width: 616rpx;
+			height: 4rpx;
+			margin: 42rpx 12rpx 0 62rpx;
+			background: #e6e6e6;
+		}
+		.group_7 {
+			position: relative;
+			width: 448rpx;
+			padding-top: 28rpx;
+			margin: 36rpx 242rpx 0 0;
+			.group_8 {
+				background-color: rgba(255, 255, 255, 1);
+				border-radius: 50%;
+				width: 36rpx;
+				height: 36rpx;
+				border: 1px solid rgba(220, 220, 220, 1);
+				margin-bottom: 26rpx;
+			}
+			.image-text_6 {
+				width: 284rpx;
+				margin-top: 28rpx;
+				.thumbnail_6 {
+					width: 22rpx;
+					height: 28rpx;
+					margin: 2rpx 0 4rpx 0;
+				}
+				.text-group_6 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+				}
+			}
+			.image-text_7 {
+				position: absolute;
+				left: 66rpx;
+				top: 0;
+				width: 256rpx;
+				height: 86rpx;
+				.box_5 {
+					border-radius: 4px;
+					background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/54db6ac71300460c88579a612017009d_mergeImage.png);
+					width: 80rpx;
+					height: 80rpx;
+					margin-top: 6rpx;
+				}
+				.text-group_7 {
+					overflow-wrap: break-word;
+					color: rgba(51, 51, 51, 1);
+					font-size: 28rpx;
+					font-family: PingFangSC-Medium;
+					font-weight: 500;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 40rpx;
+				}
+			}
+		}
+		.image_3 {
+			width: 616rpx;
+			height: 4rpx;
+			margin: 42rpx 12rpx 0 62rpx;
+			background: #e6e6e6;
+		}
+		.group_9 {
+			position: relative;
+			width: 462rpx;
+			padding-top: 28rpx;
+			margin: 36rpx 228rpx 0 0;
+			.section_2 {
+				background-color: rgba(255, 255, 255, 1);
+				border-radius: 50%;
+				width: 36rpx;
+				height: 36rpx;
+				border: 1px solid rgba(220, 220, 220, 1);
+				margin-bottom: 26rpx;
+			}
+			.image-text_8 {
+				width: 298rpx;
+				margin-top: 28rpx;
+				.thumbnail_7 {
+					width: 22rpx;
+					height: 28rpx;
+					margin: 2rpx 0 4rpx 0;
+				}
+				.text-group_8 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+				}
+			}
+			.image-text_9 {
+				position: absolute;
+				left: 66rpx;
+				top: 0;
+				width: 322rpx;
+				height: 86rpx;
+				.group_10 {
+					border-radius: 4px;
+					background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/e67db92637714f88a1c79bdf665f41ce_mergeImage.png);
+					width: 80rpx;
+					height: 80rpx;
+					margin-top: 6rpx;
+				}
+				.text-group_9 {
+					overflow-wrap: break-word;
+					color: rgba(51, 51, 51, 1);
+					font-size: 28rpx;
+					font-family: PingFangSC-Medium;
+					font-weight: 500;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 40rpx;
+				}
+			}
+		}
+		.image_4 {
+			width: 616rpx;
+			height: 4rpx;
+			margin: 44rpx 12rpx 0 62rpx;
+			background: #e6e6e6;
+		}
+		.group_11 {
+			position: relative;
+			width: 570rpx;
+			padding-top: 28rpx;
+			margin: 34rpx 120rpx 0 0;
+			.box_6 {
+				background-color: rgba(255, 255, 255, 1);
+				border-radius: 50%;
+				width: 36rpx;
+				height: 36rpx;
+				border: 1px solid rgba(220, 220, 220, 1);
+				margin-bottom: 26rpx;
+			}
+			.image-text_10 {
+				width: 406rpx;
+				margin-top: 28rpx;
+				.thumbnail_8 {
+					width: 22rpx;
+					height: 28rpx;
+					margin: 2rpx 0 4rpx 0;
+				}
+				.text-group_10 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+				}
+			}
+			.image-text_11 {
+				position: absolute;
+				left: 66rpx;
+				top: 0;
+				width: 294rpx;
+				height: 86rpx;
+				.box_7 {
+					border-radius: 4px;
+					background-image: url(https://lanhu-dds-backend.oss-cn-beijing.aliyuncs.com/merge_image/imgs/1086e7f7c5b2402aa7232a0f57c31ae5_mergeImage.png);
+					width: 80rpx;
+					height: 80rpx;
+					margin-top: 6rpx;
+				}
+				.text-group_11 {
+					overflow-wrap: break-word;
+					color: rgba(51, 51, 51, 1);
+					font-size: 28rpx;
+					font-family: PingFangSC-Medium;
+					font-weight: 500;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 40rpx;
+				}
+			}
+		}
+		.image_5 {
+			width: 616rpx;
+			height: 4rpx;
+			margin: 44rpx 12rpx 0 62rpx;
+			background: #e6e6e6;
+		}
+		.image_6 {
+			width: 268rpx;
+			height: 10rpx;
+			align-self: center;
+			margin-top: 68rpx;
+		}
+	}
 }
 </style>

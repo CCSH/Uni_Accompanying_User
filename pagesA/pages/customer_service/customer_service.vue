@@ -3,7 +3,7 @@
 		<view class="block_1 flex-col">
 			<view class="block_3 flex-col">
 				<view class="image-text_1 flex-row justify-between">
-					<image class="thumbnail_4" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng99803c338539dc81df9b63a6cf90d5c1499f7fd8c6ed2907e555054ad7c8b759" />
+					<image class="thumbnail_4" referrerpolicy="no-referrer" src="/static/pingjia@2x.png" />
 					<text class="text-group_1">请留言，我们会尽快回复！</text>
 				</view>
 				<view class="group_1 flex-row justify-between">

@@ -4,7 +4,7 @@
 			<view class="section_2 flex-col">
 				<view class="text-wrapper_4 flex-row">
 					<view class="image-text_2 flex-row justify-between">
-						<image class="thumbnail_10" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" />
+						<image class="thumbnail_10" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" mode="aspectFit" />
 						<input class="text_7" placeholder="请输入城市名称"/>
 					</view>
 				</view>

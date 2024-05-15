@@ -4,7 +4,7 @@
 			<view class="group_2 flex-col">
 				<view class="group_5 flex-row">
 					<view class="image-text_1 flex-row justify-between">
-						<image class="thumbnail_6" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" />
+						<image class="thumbnail_6" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" mode="aspectFit"/>
 						<input placeholder="请输入医院名称" class="text-group_1" />
 					</view>
 				</view>

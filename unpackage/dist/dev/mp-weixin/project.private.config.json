@@ -8,6 +8,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/pages/submit_comment/submit_comment",
+          "pathName": "pagesA/pages/submit_comment/submit_comment",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesA/pages/order_detail/order_detail",
+          "pathName": "pagesA/pages/order_detail/order_detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/pages/comment_list/comment_list",
           "pathName": "pagesA/pages/comment_list/comment_list",
           "query": "",
