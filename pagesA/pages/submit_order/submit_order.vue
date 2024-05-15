@@ -52,14 +52,11 @@
 							成都416医院
 							<br />
 						</text>
-						<text class="paragraph_3">
+						<text class="paragraph_3" @click="$refs.popup_department.open()">
 							请选择就诊室
 							<br />
 						</text>
-						<text class="paragraph_3">
-							请选择就诊时间
-							<br />
-						</text>
+						<uni-datetime-picker class="paragraph_3" v-model="single"><view style="font-size:28rpx;color:#999999">请选择就诊时间</view></uni-datetime-picker>
 					</view>
 					<view class="image-wrapper_1 flex-col">
 						<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/more_hui@2x.png" />
@@ -78,7 +75,7 @@
 						<text class="text_19">148</text>
 						<text class="text_20">.00</text>
 					</view>
-					<view class="text-wrapper_10 flex-col">
+					<view class="text-wrapper_10 flex-col" @click="handlePlay">
 						<text class="text_21">立即下单</text>
 					</view>
 				</view>
@@ -291,6 +288,64 @@
 				</view>
 			</view>
 		</uni-popup>
+		<!-- 选择科室 -->
+		<uni-popup ref="popup_department" type="bottom" :safe-area="false" class="popup_department" background-color="#fff" borderRadius="38rpx   38rpx   0rpx   0rpx">
+			<view class="box_1 flex-col">
+				<view class="group_6 flex-row justify-between">
+					<view class="group_7 flex-col"></view>
+					<image class="thumbnail_6" referrerpolicy="no-referrer" src="/static/guanbi@2x.png" @click="$refs.popup_department.close()" />
+					<text class="text_6">选择科室</text>
+				</view>
+				<view class="group_8 flex-row">
+					<view class="image-text_1 flex-row justify-between">
+						<image class="thumbnail_7" referrerpolicy="no-referrer" src="/static/tishi@2x.png" />
+						<text class="text-group_1">提示：若是您对就诊的科室存在疑问，可以向客服咨询~</text>
+					</view>
+				</view>
+				<image class="image_4" referrerpolicy="no-referrer" />
+				<view class="group_9 flex-row justify-between">
+					<view class="box_2 flex-col">
+						<view class="block_1 flex-col">
+							<!-- <view class="box_3 flex-col"></view> -->
+						</view>
+						<text class="paragraph_1 flex-col">
+							<text :class="patientLeft == 0 ? 'patient_h' : ''" @click="patientLeft = 0">骨科</text>
+							<text :class="patientLeft == 1 ? 'patient_h' : ''" @click="patientLeft = 1">其它科室</text>
+							<text :class="patientLeft == 2 ? 'patient_h' : ''" @click="patientLeft = 2">健康管理科</text>
+							<text :class="patientLeft == 3 ? 'patient_h' : ''" @click="patientLeft = 3">内科</text>
+							<text :class="patientLeft == 4 ? 'patient_h' : ''" @click="patientLeft = 4">眼科</text>
+							<text :class="patientLeft == 5 ? 'patient_h' : ''" @click="patientLeft = 5">儿科</text>
+							<text :class="patientLeft == 6 ? 'patient_h' : ''" @click="patientLeft = 6">皮肤性病科</text>
+							<text :class="patientLeft == 7 ? 'patient_h' : ''" @click="patientLeft = 7">医技科</text>
+							<text :class="patientLeft == 8 ? 'patient_h' : ''" @click="patientLeft = 8">肿瘤医学科</text>
+							<text :class="patientLeft == 9 ? 'patient_h' : ''" @click="patientLeft = 9">重症医学科</text>
+						</text>
+					</view>
+					<text class="paragraph_2">
+						<text @click="$refs.popup_department.close()">肾内科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">呼吸科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">心血管内科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">感染/传染科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">发热门诊</text>
+						<br />
+						<text @click="$refs.popup_department.close()">消化内科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">血液科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">内分泌科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">风湿免疫科</text>
+						<br />
+						<text @click="$refs.popup_department.close()">全科门诊</text>
+					</text>
+				</view>
+				<image class="image_5" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" />
+			</view>
+		</uni-popup>
 	</view>
 </template>
 <script>
@@ -305,6 +360,8 @@ export default {
 			isAgreement: true,
 			serveIndex: 0,
 			patientIndex: 0,
+			patientLeft: 0,
+			single: new Date(),
 			constants: {},
 		}
 	},
@@ -318,6 +375,17 @@ export default {
 		showServe() {
 			this.$refs.popup_serve.open()
 		},
+		handlePlay() {
+			uni.showToast({
+				title: '支付成功',
+				icon: 'success',
+				mask: true,
+				duration: 1000,
+			})
+			setTimeout(() => {
+				uni.reLaunch({ url: '/pages/home/home' })
+			}, 1000);
+		}
 	},
 }
 </script>
@@ -639,6 +707,7 @@ export default {
 						// line-height: 108rpx;
 					}
 					.paragraph_3 {
+						position: relative;
 						width: 196rpx;
 						// height: 324rpx;
 						overflow-wrap: break-word;
@@ -1621,5 +1690,146 @@ export default {
 			margin-top: 44rpx;
 		}
 	}
+}
+
+.popup_department {
+	position: relative;
+	.box_1 {
+		padding: 60rpx 0 18rpx 0;
+		background: transparent;
+		.group_6 {
+			position: relative;
+			width: 680rpx;
+			margin: 0 32rpx 0 38rpx;
+			padding: 10rpx 0 4rpx 24rpx;
+			.group_7 {
+				background-color: rgba(165, 229, 215, 1);
+				border-radius: 5px;
+				width: 80rpx;
+				height: 20rpx;
+				margin-top: 14rpx;
+			}
+			.thumbnail_6 {
+				width: 26rpx;
+				height: 26rpx;
+				// border: 1px solid rgba(153, 153, 153, 1);
+				margin-bottom: 8rpx;
+			}
+			.text_6 {
+				position: absolute;
+				left: 0;
+				top: 0;
+				overflow-wrap: break-word;
+				color: rgba(69, 69, 69, 1);
+				font-size: 34rpx;
+				font-family: PingFangSC-Semibold;
+				font-weight: 600;
+				text-align: left;
+				white-space: nowrap;
+				line-height: 48rpx;
+			}
+		}
+		.group_8 {
+			background-color: rgba(228, 244, 241, 1);
+			border-radius: 4px;
+			margin: 32rpx 32rpx 0 38rpx;
+			padding: 8rpx 32rpx 10rpx 20rpx;
+			.image-text_1 {
+				width: 628rpx;
+				.thumbnail_7 {
+					width: 16rpx;
+					height: 20rpx;
+					margin: 8rpx 0 6rpx 0;
+				}
+				.text-group_1 {
+					overflow-wrap: break-word;
+					color: rgba(81, 187, 164, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+				}
+			}
+		}
+		.image_4 {
+			width: 750rpx;
+			height: 2rpx;
+			margin-top: 30rpx;
+			background: #e6e6e6;
+		}
+		.group_9 {
+			width: 486rpx;
+			margin-right: 264rpx;
+			background: #fff;
+			.box_2 {
+				background-color: rgba(246, 246, 246, 1);
+				position: relative;
+				padding: 332rpx 0 698rpx 0;
+				.block_1 {
+					background-color: rgba(255, 255, 255, 1);
+					padding-right: 292rpx;
+					.box_3 {
+						background-color: rgba(80, 186, 174, 1);
+						width: 4rpx;
+						height: 110rpx;
+					}
+				}
+				.paragraph_1 {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+
+					// height: 1100rpx;
+					// overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 28rpx;
+					font-weight: normal;
+					text-align: left;
+					line-height: 110rpx;
+					text {
+						padding-left: 30rpx;
+						width: 100%;
+						display: block;
+					}
+					.patient_h {
+						border-left: 4rpx solid #50baae;
+						background: #fff;
+					}
+				}
+			}
+			.paragraph_2 {
+				width: 154rpx;
+				height: 1100rpx;
+				overflow-wrap: break-word;
+				color: rgba(51, 51, 51, 1);
+				font-size: 28rpx;
+				font-weight: normal;
+				text-align: left;
+				line-height: 110rpx;
+				text {
+					width: 100%;
+					display: block;
+				}
+			}
+		}
+		.image_5 {
+			width: 268rpx;
+			height: 10rpx;
+			align-self: center;
+			margin-top: 30rpx;
+		}
+	}
+}
+
+/deep/.uni-datetime-picker--btn {
+	background: #50baae;
+}
+/deep/.uni-calendar-item--checked {
+	background: #50baae !important;
+}
+/deep/.uni-datetime-picker-btn-text {
+	color: #50baae !important;
 }
 </style>

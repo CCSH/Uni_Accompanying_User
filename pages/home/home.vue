@@ -245,7 +245,7 @@ export default {
 			if (!this.isLogin()) {
 				return
 			}
-			uni.navigateTo({ url: '/pagesA/pages/hospital_detail/hospital_detail' })
+			uni.navigateTo({ url: '/pagesA/pages/select_personnel/select_personnel' })
 		},
 		gotoService() {
 			if (!this.isLogin()) {

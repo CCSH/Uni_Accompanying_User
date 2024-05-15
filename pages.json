@@ -68,6 +68,24 @@
 					}
 				},
 				{
+					"path": "pages/select_personnel/select_personnel",
+					"style": {
+						"navigationBarTitleText": "陪诊师"
+					}
+				},
+				{
+					"path": "pages/personnel_detail/personnel_detail",
+					"style": {
+						"navigationBarTitleText": "陪诊师主页"
+					}
+				},
+				{
+					"path": "pages/comment_list/comment_list",
+					"style": {
+						"navigationBarTitleText": "评论"
+					}
+				},
+				{
 					"path": "pages/login/login",
 					"style": {
 						"navigationStyle": "custom",

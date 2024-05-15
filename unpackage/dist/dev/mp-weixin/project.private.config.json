@@ -8,6 +8,27 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/pages/comment_list/comment_list",
+          "pathName": "pagesA/pages/comment_list/comment_list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesA/pages/personnel_detail/personnel_detail",
+          "pathName": "pagesA/pages/personnel_detail/personnel_detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesA/pages/select_personnel/select_personnel",
+          "pathName": "pagesA/pages/select_personnel/select_personnel",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/pages/submit_order/submit_order",
           "pathName": "pagesA/pages/submit_order/submit_order",
           "query": "",
