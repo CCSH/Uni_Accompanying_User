@@ -105,7 +105,7 @@
 			</view>
 		</view>
 		<!-- 悬浮 -->
-		<drag-button @btnClick="gotoService" :isDock="true" :existTabBar="true"></drag-button>
+		<drag-button :isDock="true" :existTabBar="true"></drag-button>
 		<!-- 弹窗 -->
 		<uni-popup class="pop_agreement" ref="popupAgreement" type="bottom" safeArea :mask-click="false">
 			<view class="pop_content">
@@ -246,12 +246,6 @@ export default {
 				return
 			}
 			uni.navigateTo({ url: '/pagesA/pages/select_personnel/select_personnel' })
-		},
-		gotoService() {
-			if (!this.isLogin()) {
-				return
-			}
-			uni.navigateTo({ url: '/pagesA/pages/customer_service/customer_service' })
 		},
 	},
 	onShow() {

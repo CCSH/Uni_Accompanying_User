@@ -23,6 +23,8 @@
         "pages/manage_client/manage_client",
         "pages/coupon/coupon",
         "pages/add_client/add_client",
+        "pages/manage_address/manage_address",
+        "pages/add_address/add_address",
         "pages/login/login",
         "pages/service_detail/service_detail"
       ]

@@ -118,6 +118,18 @@
 					}
 				},
 				{
+					"path": "pages/manage_address/manage_address",
+					"style": {
+						"navigationBarTitleText": "地址管理"
+					}
+				},
+				{
+					"path": "pages/add_address/add_address",
+					"style": {
+						"navigationBarTitleText": "添加地址"
+					}
+				},
+				{
 					"path": "pages/login/login",
 					"style": {
 						"navigationStyle": "custom",

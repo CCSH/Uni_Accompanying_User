@@ -217,6 +217,19 @@ var _default = {
       uni.navigateTo({
         url: '/pagesA/pages/coupon/coupon'
       });
+    },
+    handleClick: function handleClick(index) {
+      switch (index) {
+        case 0:
+          {
+            uni.navigateTo({
+              url: '/pagesA/pages/manage_address/manage_address'
+            });
+          }
+          break;
+        default:
+          break;
+      }
     }
   }
 };

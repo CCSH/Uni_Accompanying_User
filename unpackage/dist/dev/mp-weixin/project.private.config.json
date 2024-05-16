@@ -4,6 +4,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/pages/add_address/add_address",
+          "pathName": "pagesA/pages/add_address/add_address",
+          "query": "edit=true",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/pages/coupon/coupon",
           "pathName": "pagesA/pages/coupon/coupon",
           "query": "",

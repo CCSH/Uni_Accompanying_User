@@ -32,7 +32,7 @@
 			</view>
 			<view class="section_6 flex-col">
 				<view class="list_5 flex-col">
-					<view class="list-items_1 flex-row justify-between" v-for="(item, index) in loopData0" :key="index">
+					<view class="list-items_1 flex-row justify-between" v-for="(item, index) in loopData0" :key="index" @click="handleClick(index)">
 						<text class="text_4">{{ item.lanhutext0 }}</text>
 						<image class="thumbnail_1" referrerpolicy="no-referrer" :src="item.lanhuimage0" />
 					</view>
@@ -79,6 +79,18 @@ export default {
 		gotoCoupon() {
 			uni.navigateTo({ url: '/pagesA/pages/coupon/coupon' })
 		},
+		handleClick(index) {
+			switch (index) {
+				case 0:
+					{
+						uni.navigateTo({ url: '/pagesA/pages/manage_address/manage_address' })
+					}
+					break;
+			
+				default:
+					break;
+			}
+		}
 	},
 }
 </script>

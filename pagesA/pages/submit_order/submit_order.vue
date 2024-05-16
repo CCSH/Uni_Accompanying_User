@@ -110,7 +110,7 @@
 		</view>
 
 		<!-- 悬浮 -->
-		<drag-button @btnClick="gotoService" :isDock="true" :existTabBar="true"></drag-button>
+		<drag-button :isDock="true" :existTabBar="true"></drag-button>
 		<!-- 弹窗 -->
 		<!-- 服务 -->
 		<uni-popup ref="popup_hospital" type="bottom" :safe-area="false">
@@ -468,9 +468,6 @@ export default {
 		}
 	},
 	methods: {
-		gotoService() {
-			uni.navigateTo({ url: '/pagesA/pages/customer_service/customer_service' })
-		},
 		showAgreement() {
 			uni.navigateTo({ url: '/pagesA/pages/privacy_agreement/privacy_agreement' })
 		},

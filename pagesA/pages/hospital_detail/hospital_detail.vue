@@ -105,7 +105,7 @@
           />
         </view> -->
 				<!-- 悬浮 -->
-				<drag-button @btnClick="gotoIM" :isDock="true" :existTabBar="false"></drag-button>
+				<drag-button :isDock="true" :existTabBar="false"></drag-button>
 			</view>
 			<view class="box_13 flex-col">
 				<view class="text-wrapper_13 flex-col">
@@ -143,10 +143,6 @@ export default {
 	methods: {
 		gotoServe() {
 			uni.navigateTo({ url: '/pagesA/pages/service_detail/service_detail' })
-		},
-		gotoIM() {
-					uni.navigateTo({ url: '/pagesA/pages/customer_service/customer_service' })
-
 		},
 	},
 }

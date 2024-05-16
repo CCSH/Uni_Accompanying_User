@@ -270,14 +270,6 @@ var _default = {
       uni.navigateTo({
         url: '/pagesA/pages/select_personnel/select_personnel'
       });
-    },
-    gotoService: function gotoService() {
-      if (!this.isLogin()) {
-        return;
-      }
-      uni.navigateTo({
-        url: '/pagesA/pages/customer_service/customer_service'
-      });
     }
   },
   onShow: function onShow() {

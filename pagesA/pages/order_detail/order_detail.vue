@@ -160,7 +160,7 @@
 			</view>
 		</view>
 		<!-- 悬浮 -->
-		<drag-button @btnClick="gotoService" :isDock="true" :existTabBar="true"></drag-button>
+		<drag-button  :isDock="true" :existTabBar="true"></drag-button>
 		<!-- 弹窗 -->
 		<uni-popup ref="popup_cancel" type="dialog" class="dialog" background-color="#fff" borderRadius="10rpx   10rpx   10rpx   10rpx">
 			<view class="group_3 flex-col">
@@ -199,9 +199,6 @@ export default {
 		}
 	},
 	methods: {
-		gotoService() {
-			uni.navigateTo({ url: '/pagesA/pages/customer_service/customer_service' })
-		},
 		handlePlay() {
 			uni.showToast({
 				title: '支付成功',

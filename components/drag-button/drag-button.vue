@@ -63,6 +63,7 @@ export default {
 	},
 	methods: {
 		click() {
+			uni.navigateTo({ url: '/pagesA/pages/customer_service/customer_service' })
 			this.$emit('btnClick')
 		},
 		touchstart(e) {
@@ -102,7 +103,6 @@ export default {
 				} else {
 					this.left = edgeRigth
 				}
-				console.log('ccsh', this.left)
 			}
 
 			this.isMove = false
