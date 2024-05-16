@@ -98,7 +98,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+// import dragButton from '@/components/drag-button/drag-button.vue'
 var _default = {
+  // components: {
+  // 	dragButton,
+  // },
   globalData: {
     clickInterval: 2000,
     //防重复点击间隔

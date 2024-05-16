@@ -1,50 +1,11 @@
 {
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "projectname": "CCSH",
-  "setting": {
-    "compileHotReLoad": true
-  },
   "condition": {
     "miniprogram": {
       "list": [
         {
-          "name": "pagesA/pages/submit_comment/submit_comment",
-          "pathName": "pagesA/pages/submit_comment/submit_comment",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/order_detail/order_detail",
-          "pathName": "pagesA/pages/order_detail/order_detail",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/comment_list/comment_list",
-          "pathName": "pagesA/pages/comment_list/comment_list",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/personnel_detail/personnel_detail",
-          "pathName": "pagesA/pages/personnel_detail/personnel_detail",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/select_personnel/select_personnel",
-          "pathName": "pagesA/pages/select_personnel/select_personnel",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pagesA/pages/submit_order/submit_order",
-          "pathName": "pagesA/pages/submit_order/submit_order",
+          "name": "pagesA/pages/add_client/add_client",
+          "pathName": "pagesA/pages/add_client/add_client",
           "query": "",
           "launchMode": "default",
           "scene": null
