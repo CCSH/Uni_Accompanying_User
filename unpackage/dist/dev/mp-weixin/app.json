@@ -21,6 +21,7 @@
         "pages/order_detail/order_detail",
         "pages/submit_comment/submit_comment",
         "pages/manage_client/manage_client",
+        "pages/coupon/coupon",
         "pages/add_client/add_client",
         "pages/login/login",
         "pages/service_detail/service_detail"

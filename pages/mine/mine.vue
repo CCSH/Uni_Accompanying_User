@@ -13,7 +13,7 @@
 					</view>
 				</view>
 				<view class="block_3 flex-row">
-					<view class="image-text_7 flex-row justify-between">
+					<view class="image-text_7 flex-row justify-between" @click="gotoCoupon">
 						<view class="group_1 flex-col"></view>
 						<text class="text_2">优惠券</text>
 					</view>
@@ -75,6 +75,9 @@ export default {
 			uni.navigateTo({
 				url: '/pagesA/pages/manage_client/manage_client',
 			})
+		},
+		gotoCoupon() {
+			uni.navigateTo({ url: '/pagesA/pages/coupon/coupon' })
 		},
 	},
 }

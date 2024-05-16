@@ -212,6 +212,11 @@ var _default = {
       uni.navigateTo({
         url: '/pagesA/pages/manage_client/manage_client'
       });
+    },
+    gotoCoupon: function gotoCoupon() {
+      uni.navigateTo({
+        url: '/pagesA/pages/coupon/coupon'
+      });
     }
   }
 };

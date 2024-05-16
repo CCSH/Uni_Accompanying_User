@@ -4,6 +4,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/pages/coupon/coupon",
+          "pathName": "pagesA/pages/coupon/coupon",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/pages/add_client/add_client",
           "pathName": "pagesA/pages/add_client/add_client",
           "query": "",

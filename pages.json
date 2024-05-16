@@ -106,6 +106,12 @@
 					}
 				},
 				{
+					"path": "pages/coupon/coupon",
+					"style": {
+						"navigationBarTitleText": "优惠券"
+					}
+				},
+				{
 					"path": "pages/add_client/add_client",
 					"style": {
 						"navigationBarTitleText": "新增就诊人"
