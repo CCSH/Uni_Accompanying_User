@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -208,9 +208,33 @@ var _default = {
       constants: {}
     };
   },
-  methods: {}
+  onShow: function onShow() {
+    if (!this.isLogin()) {
+      return;
+    }
+  },
+  methods: {
+    isLogin: function isLogin() {
+      var userInfo = uni.getStorageSync('userInfo');
+      if (!userInfo) {
+        uni.showToast({
+          title: '用户未登录',
+          icon: 'none',
+          duration: 1000
+        });
+        setTimeout(function () {
+          uni.navigateTo({
+            url: '/pagesA/pages/login/login'
+          });
+        }, 1000);
+        return false;
+      }
+      return true;
+    }
+  }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

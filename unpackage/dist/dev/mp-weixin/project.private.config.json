@@ -4,6 +4,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/pages/add_complain/add_complain",
+          "pathName": "pagesA/pages/add_complain/add_complain",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/pages/add_address/add_address",
           "pathName": "pagesA/pages/add_address/add_address",
           "query": "edit=true",

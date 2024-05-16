@@ -39,7 +39,7 @@
 				</view>
 				<view class="text-wrapper_4">
 					<text class="text_5">服务热线：</text>
-					<text class="text_6">400-899-9999</text>
+					<text class="text_6" @click="handleCall">400-899-9999</text>
 				</view>
 			</view>
 		</view>
@@ -70,7 +70,32 @@ export default {
 			constants: {},
 		}
 	},
+	onShow() {
+		if (!this.isLogin()) {
+			return
+		}
+	},
 	methods: {
+		handleCall() {
+			uni.makePhoneCall({
+				phoneNumber: '400-8999-999', //仅为示例
+			})
+		},
+		isLogin() {
+			let userInfo = uni.getStorageSync('userInfo')
+			if (!userInfo) {
+				uni.showToast({
+					title: '用户未登录',
+					icon: 'none',
+					duration: 1000,
+				})
+				setTimeout(() => {
+					uni.navigateTo({ url: '/pagesA/pages/login/login' })
+				}, 1000)
+				return false
+			}
+			return true
+		},
 		gotoClient() {
 			uni.navigateTo({
 				url: '/pagesA/pages/manage_client/manage_client',
@@ -85,12 +110,36 @@ export default {
 					{
 						uni.navigateTo({ url: '/pagesA/pages/manage_address/manage_address' })
 					}
-					break;
-			
+					break
+				case 1:
+					{
+						uni.navigateTo({ url: '/pagesA/pages/manage_complain/manage_complain' })
+					}
+					break
+				case 2:
+					{
+						uni.navigateTo({ url: '/pagesA/pages/privacy_agreement/privacy_agreement' })
+					}
+					break
+				case 3:
+					{
+						uni.showModal({
+							title: '注销',
+							content: '是否确认注销账号！',
+							showCancel: true,
+							success: ({ confirm, cancel }) => {
+								if (confirm) {
+									uni.removeStorageSync('userInfo')
+									uni.reLaunch({ url: '/pages/home/home' })
+								}
+							},
+						})
+					}
+					break
 				default:
-					break;
+					break
 			}
-		}
+		},
 	},
 }
 </script>

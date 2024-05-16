@@ -207,7 +207,34 @@ var _default = {
       constants: {}
     };
   },
+  onShow: function onShow() {
+    if (!this.isLogin()) {
+      return;
+    }
+  },
   methods: {
+    handleCall: function handleCall() {
+      uni.makePhoneCall({
+        phoneNumber: '400-8999-999' //仅为示例
+      });
+    },
+    isLogin: function isLogin() {
+      var userInfo = uni.getStorageSync('userInfo');
+      if (!userInfo) {
+        uni.showToast({
+          title: '用户未登录',
+          icon: 'none',
+          duration: 1000
+        });
+        setTimeout(function () {
+          uni.navigateTo({
+            url: '/pagesA/pages/login/login'
+          });
+        }, 1000);
+        return false;
+      }
+      return true;
+    },
     gotoClient: function gotoClient() {
       uni.navigateTo({
         url: '/pagesA/pages/manage_client/manage_client'
@@ -224,6 +251,39 @@ var _default = {
           {
             uni.navigateTo({
               url: '/pagesA/pages/manage_address/manage_address'
+            });
+          }
+          break;
+        case 1:
+          {
+            uni.navigateTo({
+              url: '/pagesA/pages/manage_complain/manage_complain'
+            });
+          }
+          break;
+        case 2:
+          {
+            uni.navigateTo({
+              url: '/pagesA/pages/privacy_agreement/privacy_agreement'
+            });
+          }
+          break;
+        case 3:
+          {
+            uni.showModal({
+              title: '注销',
+              content: '是否确认注销账号！',
+              showCancel: true,
+              success: function success(_ref) {
+                var confirm = _ref.confirm,
+                  cancel = _ref.cancel;
+                if (confirm) {
+                  uni.removeStorageSync('userInfo');
+                  uni.reLaunch({
+                    url: '/pages/home/home'
+                  });
+                }
+              }
             });
           }
           break;

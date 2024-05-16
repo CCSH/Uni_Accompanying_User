@@ -25,6 +25,8 @@
         "pages/add_client/add_client",
         "pages/manage_address/manage_address",
         "pages/add_address/add_address",
+        "pages/manage_complain/manage_complain",
+        "pages/add_complain/add_complain",
         "pages/login/login",
         "pages/service_detail/service_detail"
       ]

@@ -71,7 +71,28 @@ export default {
 			constants: {},
 		}
 	},
-	methods: {},
+	onShow() {
+		if (!this.isLogin()) {
+			return
+		}
+	},
+	methods: {
+		isLogin() {
+			let userInfo = uni.getStorageSync('userInfo')
+			if (!userInfo) {
+				uni.showToast({
+					title: '用户未登录',
+					icon: 'none',
+					duration: 1000,
+				})
+				setTimeout(() => {
+					uni.navigateTo({ url: '/pagesA/pages/login/login' })
+				}, 1000)
+				return false
+			}
+			return true
+		},
+	},
 }
 </script>
 <style scoped lang="scss">
@@ -222,7 +243,7 @@ export default {
 					width: 628rpx;
 					height: 2rpx;
 					margin-top: 36rpx;
-					background: #E6E6E6;
+					background: #e6e6e6;
 				}
 				.text-group_3 {
 					margin: 32rpx 108rpx 0 0;
@@ -309,7 +330,7 @@ export default {
 					width: 628rpx;
 					height: 2rpx;
 					margin-top: 36rpx;
-					background: #E6E6E6;
+					background: #e6e6e6;
 				}
 				.text-group_5 {
 					margin: 32rpx 108rpx 0 0;

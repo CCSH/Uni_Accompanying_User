@@ -130,6 +130,18 @@
 					}
 				},
 				{
+					"path": "pages/manage_complain/manage_complain",
+					"style": {
+						"navigationBarTitleText": "投诉管理"
+					}
+				},
+				{
+					"path": "pages/add_complain/add_complain",
+					"style": {
+						"navigationBarTitleText": "问题反馈"
+					}
+				},
+				{
 					"path": "pages/login/login",
 					"style": {
 						"navigationStyle": "custom",
