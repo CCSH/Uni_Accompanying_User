@@ -209,23 +209,6 @@ var _default = {
         lanhuimage0: 'jizhenfuwu@2x.png',
         lanhutext0: '急诊服务'
       }],
-      loopData1: [{
-        lanhuimage0: 'https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngefc3c9c19ebe8fb7ea2f546c56aa548c3d0e5cbd6b91855b3aad6d47382cb056',
-        lanhutext0: '首页',
-        lanhufontColor0: 'rgba(3,182,160,1)'
-      }, {
-        lanhuimage0: 'https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng38ddf57f17e05fb63dbb7da810e0e92f154c350f1e82e721e5da3414db22af78',
-        lanhutext0: '订单',
-        lanhufontColor0: 'rgba(102,102,102,1)'
-      }, {
-        lanhuimage0: 'https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngb0a299f892162622844dea9c36ba888aa0c64a45cc2846eeaaf10dbd501879c1',
-        lanhutext0: '消息',
-        lanhufontColor0: 'rgba(102,102,102,1)'
-      }, {
-        lanhuimage0: 'https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng60d05caf502eb47837f95629455272416a922cbe755ef5631c7fff7dbba741f1',
-        lanhutext0: '我的',
-        lanhufontColor0: 'rgba(102,102,102,1)'
-      }],
       constants: {}
     };
   },

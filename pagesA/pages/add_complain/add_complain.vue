@@ -191,9 +191,10 @@ export default {
 				flex-wrap: wrap;
 				margin: 40rpx 242rpx 0 0;
 				.text_h {
-					border: 1px solid #51bba4;
+					border: 1px solid #51bba4 !important;
 				}
 				.text-wrapper_3 {
+					border: 1px solid transparent;
 					background-color: rgba(247, 247, 247, 1);
 					border-radius: 15px;
 					height: 60rpx;
@@ -211,6 +212,8 @@ export default {
 					}
 				}
 				.text-wrapper_4 {
+										border: 1px solid transparent;
+
 					background-color: rgba(247, 247, 247, 1);
 					border-radius: 15px;
 					height: 60rpx;
@@ -228,6 +231,8 @@ export default {
 					}
 				}
 				.text-wrapper_5 {
+										border: 1px solid transparent;
+
 					background-color: rgba(247, 247, 247, 1);
 					border-radius: 15px;
 					height: 60rpx;
@@ -245,6 +250,8 @@ export default {
 					}
 				}
 				.text-wrapper_6 {
+										border: 1px solid transparent;
+
 					background-color: rgba(247, 247, 247, 1);
 					border-radius: 15px;
 					height: 60rpx;
