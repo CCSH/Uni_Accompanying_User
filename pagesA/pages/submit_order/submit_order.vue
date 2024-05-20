@@ -67,20 +67,6 @@
 				<image class="image_7" referrerpolicy="no-referrer" />
 				<image class="image_8" referrerpolicy="no-referrer" />
 			</view>
-			<view class="box_8 flex-col">
-				<view class="group_8 flex-row">
-					<text class="text_17">共计</text>
-					<view class="text-wrapper_9">
-						<text class="text_18">￥</text>
-						<text class="text_19">148</text>
-						<text class="text_20">.00</text>
-					</view>
-					<view class="text-wrapper_10 flex-col" @click="handlePlay">
-						<text class="text_21">立即下单</text>
-					</view>
-				</view>
-				<view class="image-wrapper_2 flex-row"></view>
-			</view>
 			<view class="box_9 flex-col">
 				<view class="box_10 flex-col">
 					<view class="box_11 flex-row">
@@ -90,6 +76,11 @@
 					<view class="box_12 flex-row">
 						<text class="text_23">就诊人</text>
 						<text class="text_24" @click="$refs.popup_patient.open()">请选择就诊人</text>
+						<image class="thumbnail_10" referrerpolicy="no-referrer" src="/static/more_hui@2x.png" />
+					</view>
+					<view class="box_12 flex-row">
+						<text class="text_23">优惠券</text>
+						<text class="text_24" @click="$refs.popup_favorable.open()">请选择优惠券</text>
 						<image class="thumbnail_10" referrerpolicy="no-referrer" src="/static/more_hui@2x.png" />
 					</view>
 				</view>
@@ -106,6 +97,20 @@
 						<text class="text_27" @click="showAgreement">《服务条款同意书》</text>
 					</view>
 				</view>
+			</view>
+			<view class="box_8 flex-col">
+				<view class="group_8 flex-row">
+					<text class="text_17">共计</text>
+					<view class="text-wrapper_9">
+						<text class="text_18">￥</text>
+						<text class="text_19">148</text>
+						<text class="text_20">.00</text>
+					</view>
+					<view class="text-wrapper_10 flex-col" @click="handlePlay">
+						<text class="text_21">立即下单</text>
+					</view>
+				</view>
+				<view class="image-wrapper_2 flex-row"></view>
 			</view>
 		</view>
 
@@ -200,15 +205,15 @@
 			</view>
 		</uni-popup>
 		<!-- 优惠券 -->
-		<uni-popup ref="popup_favorable" type="bottom" :safe-area="false">
+		<uni-popup ref="popup_favorable" type="bottom" :safe-area="false" borderRadius="38rpx   38rpx   0rpx   0rpx">
 			<view class="popup_favorable">
 				<view class="box_1 flex-col">
 					<view class="group_1 flex-row justify-between">
 						<view class="section_3 flex-col"></view>
-						<image class="thumbnail_1" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng44edaf362a7ebdbd995220172d070d6c91d80ac7d81d588bfd4b0af325be3fdf" />
+						<image class="thumbnail_1" referrerpolicy="no-referrer" src="/static/guanbi@2x.png" @click="$refs.popup_favorable.close()" />
 						<text class="text_1">选择优惠券</text>
 					</view>
-					<view class="group_2 flex-row">
+					<view class="group_2 flex-row" @click="favorableIndex = 0">
 						<view class="text-group_1 flex-col">
 							<text class="text_2">陪诊优惠券</text>
 							<text class="text_3">有效期至2024.06.06</text>
@@ -220,7 +225,21 @@
 							</view>
 							<text class="text_6">满800可用</text>
 						</view>
-						<image class="thumbnail_2" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng02d605f95d347c4ed7d40b288f7327ef51668959f990cb2498d1b1a3fbb7d78f" />
+						<image class="thumbnail_2" referrerpolicy="no-referrer" :src="favorableIndex == 0 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" />
+					</view>
+					<view class="group_2 flex-row" @click="favorableIndex = 1">
+						<view class="text-group_1 flex-col">
+							<text class="text_2">陪诊优惠券</text>
+							<text class="text_3">有效期至2024.06.06</text>
+						</view>
+						<view class="text-group_2 flex-col">
+							<view class="text-wrapper_1">
+								<text class="text_4">￥</text>
+								<text class="text_5">100</text>
+							</view>
+							<text class="text_6">满800可用</text>
+						</view>
+						<image class="thumbnail_2" referrerpolicy="no-referrer" :src="favorableIndex == 1 ? '/static/quan_h@2x.png' : '/static/quan_n@2x.png'" />
 					</view>
 					<view class="group_3 flex-row justify-between">
 						<view class="box_2 flex-row justify-between">
@@ -230,9 +249,8 @@
 								<text class="text_9">6</text>
 							</view>
 						</view>
-						<text class="text_10">确认</text>
+						<text class="text_10" @click="$refs.popup_favorable.close()">确认</text>
 					</view>
-					<image class="image_1" referrerpolicy="no-referrer" src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng5a55bce0e61824e6b35e82f487c8fc2828194ab82d71f586b93de2f8b36bc031" />
 				</view>
 			</view>
 		</uni-popup>
@@ -356,7 +374,7 @@
 				</view>
 				<view class="group_2 flex-row">
 					<view class="image-text_1 flex-row justify-between">
-						<image class="thumbnail_2" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" mode="aspectFit"/>
+						<image class="thumbnail_2" referrerpolicy="no-referrer" src="/static/sousuo@2x.png" mode="aspectFit" />
 						<input class="text-group_1" placeholder="请输入医院名称" />
 					</view>
 				</view>
@@ -463,6 +481,7 @@ export default {
 			patientIndex: 0,
 			patientLeft: 0,
 			yiyuanIndex: 0,
+			favorableIndex: 0,
 			single: new Date(),
 			constants: {},
 		}
@@ -492,7 +511,7 @@ export default {
 .page {
 	position: relative;
 	width: 750rpx;
-	overflow: hidden;
+	overflow: auto;
 	.box_1 {
 		background-color: rgba(246, 246, 246, 1);
 		position: relative;
@@ -852,91 +871,12 @@ export default {
 				background: #e7e7e7;
 			}
 		}
-		.box_8 {
-			background-color: rgba(254, 254, 254, 1);
-			margin-top: 586rpx;
-			padding: 10rpx 32rpx 18rpx 40rpx;
-			.group_8 {
-				.text_17 {
-					overflow-wrap: break-word;
-					color: rgba(102, 102, 102, 1);
-					font-size: 24rpx;
-					font-weight: normal;
-					text-align: left;
-					white-space: nowrap;
-					line-height: 34rpx;
-					margin-top: 20rpx;
-				}
-				.text-wrapper_9 {
-					width: 118rpx;
-					height: 50rpx;
-					overflow-wrap: break-word;
-					font-size: 0;
-					font-family: PingFangSC-Semibold;
-					font-weight: 600;
-					text-align: left;
-					line-height: 34rpx;
-					margin: 14rpx 0 12rpx 12rpx;
-					.text_18 {
-						height: 50rpx;
-						overflow-wrap: break-word;
-						color: rgba(80, 186, 176, 1);
-						font-size: 24rpx;
-						font-family: PingFangSC-Semibold;
-						font-weight: 600;
-						text-align: left;
-						line-height: 34rpx;
-					}
-					.text_19 {
-						height: 50rpx;
-						overflow-wrap: break-word;
-						color: rgba(80, 186, 176, 1);
-						font-size: 36rpx;
-						font-family: PingFangSC-Semibold;
-						font-weight: 600;
-						text-align: left;
-						white-space: nowrap;
-						line-height: 34rpx;
-					}
-					.text_20 {
-						height: 50rpx;
-						overflow-wrap: break-word;
-						color: rgba(80, 186, 176, 1);
-						font-size: 24rpx;
-						font-family: PingFangSC-Semibold;
-						font-weight: 600;
-						text-align: left;
-						line-height: 34rpx;
-					}
-				}
-				.text-wrapper_10 {
-					background-color: rgba(80, 186, 176, 1);
-					border-radius: 19px;
-					margin-left: 252rpx;
-					padding: 22rpx 76rpx 20rpx 76rpx;
-					.text_21 {
-						overflow-wrap: break-word;
-						color: rgba(255, 255, 255, 1);
-						font-size: 24rpx;
-						font-weight: normal;
-						text-align: left;
-						white-space: nowrap;
-						line-height: 34rpx;
-					}
-				}
-			}
-			.image-wrapper_2 {
-				margin: 42rpx 208rpx 0 202rpx;
-				.image_9 {
-					width: 268rpx;
-					height: 10rpx;
-				}
-			}
-		}
+
 		.box_9 {
-			position: absolute;
-			left: 0;
-			top: 790rpx;
+			// position: absolute;
+			// left: 0;
+			// top: 790rpx;
+			margin-bottom: 87rpx;
 			width: 750rpx;
 			height: 588rpx;
 			padding: 22rpx 24rpx 16rpx 24rpx;
@@ -948,6 +888,7 @@ export default {
 					position: relative;
 					margin: 0 508rpx 0 2rpx;
 					padding: 24rpx 32rpx 4rpx 24rpx;
+					margin-bottom: 32rpx;
 					.group_9 {
 						background-color: rgba(165, 229, 215, 1);
 						border-radius: 5px;
@@ -969,7 +910,7 @@ export default {
 					}
 				}
 				.box_12 {
-					margin-top: 32rpx;
+					//margin-top: 32rpx;
 					.text_23 {
 						overflow-wrap: break-word;
 						color: rgba(102, 102, 102, 1);
@@ -1071,6 +1012,88 @@ export default {
 				top: 562rpx;
 				width: 40rpx;
 				height: 40rpx;
+			}
+		}
+		.box_8 {
+			background-color: rgba(254, 254, 254, 1);
+			width: 100vw;
+			margin-top: 14rpx;
+			padding: 10rpx 32rpx 18rpx 40rpx;
+			.group_8 {
+				.text_17 {
+					overflow-wrap: break-word;
+					color: rgba(102, 102, 102, 1);
+					font-size: 24rpx;
+					font-weight: normal;
+					text-align: left;
+					white-space: nowrap;
+					line-height: 34rpx;
+					margin-top: 20rpx;
+				}
+				.text-wrapper_9 {
+					width: 118rpx;
+					height: 50rpx;
+					overflow-wrap: break-word;
+					font-size: 0;
+					font-family: PingFangSC-Semibold;
+					font-weight: 600;
+					text-align: left;
+					line-height: 34rpx;
+					margin: 14rpx 0 12rpx 12rpx;
+					.text_18 {
+						height: 50rpx;
+						overflow-wrap: break-word;
+						color: rgba(80, 186, 176, 1);
+						font-size: 24rpx;
+						font-family: PingFangSC-Semibold;
+						font-weight: 600;
+						text-align: left;
+						line-height: 34rpx;
+					}
+					.text_19 {
+						height: 50rpx;
+						overflow-wrap: break-word;
+						color: rgba(80, 186, 176, 1);
+						font-size: 36rpx;
+						font-family: PingFangSC-Semibold;
+						font-weight: 600;
+						text-align: left;
+						white-space: nowrap;
+						line-height: 34rpx;
+					}
+					.text_20 {
+						height: 50rpx;
+						overflow-wrap: break-word;
+						color: rgba(80, 186, 176, 1);
+						font-size: 24rpx;
+						font-family: PingFangSC-Semibold;
+						font-weight: 600;
+						text-align: left;
+						line-height: 34rpx;
+					}
+				}
+				.text-wrapper_10 {
+					background-color: rgba(80, 186, 176, 1);
+					border-radius: 19px;
+					margin-left: 252rpx;
+					padding: 22rpx 76rpx 20rpx 76rpx;
+					.text_21 {
+						overflow-wrap: break-word;
+						color: rgba(255, 255, 255, 1);
+						font-size: 24rpx;
+						font-weight: normal;
+						text-align: left;
+						white-space: nowrap;
+						line-height: 34rpx;
+					}
+				}
+			}
+			.image-wrapper_2 {
+				margin: 42rpx 208rpx 0 202rpx;
+				.image_9 {
+					width: 268rpx;
+					height: 10rpx;
+				}
 			}
 		}
 	}
@@ -1465,11 +1488,10 @@ export default {
 }
 
 .popup_favorable {
-	background: #fff;
 	.box_1 {
-		background-color: rgba(255, 255, 255, 1);
+		background-color: #fff;
 		border-radius: 20px 20px 0px 0px;
-		padding: 44rpx 22rpx 16rpx 22rpx;
+		padding: 44rpx 22rpx 100rpx 22rpx;
 		.group_1 {
 			position: relative;
 			width: 674rpx;
@@ -1607,13 +1629,14 @@ export default {
 				}
 				.text-wrapper_2 {
 					width: 56rpx;
-					height: 60rpx;
+					// height: 60rpx;
 					overflow-wrap: break-word;
 					font-size: 0;
 					font-family: PingFangSC-Semibold;
 					font-weight: 600;
 					text-align: right;
 					line-height: 40rpx;
+					margin-top: 8rpx;
 					.text_8 {
 						height: 60rpx;
 						overflow-wrap: break-word;
