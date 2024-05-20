@@ -21,27 +21,28 @@
 						<view class="image-text_12 flex-row justify-between">
 							<text class="text_7">服务描述</text>
 						</view>
-						<image class="thumbnail_12" referrerpolicy="no-referrer" src="/static/wuxing@2x.png" />
+						<uni-rate class="thumbnail_12" size="18" v-model="rate" />
+						<!-- <image class="thumbnail_12" referrerpolicy="no-referrer" src="/static/wuxing@2x.png" /> -->
 						<view class="image-text_13 flex-row justify-between">
-							<text class="text_8">非常好</text>
+							<text class="text_8">{{ rate == 1 ? '非常不满意' : rate == 2 ? '不满意' : rate == 3 ? '好' : rate == 4 ? '很好' : rate == 5 ? '非常好' : '' }}</text>
 						</view>
 					</view>
 				</view>
 				<view class="group_14 flex-row justify-between">
-					<view class="text-wrapper_2 flex-col">
+					<view :class="'text-wrapper_2 flex-col ' + (tagList.includes('整体评价') ? 'text_h' : '')" @click="handleTag('整体评价')">
 						<text class="text_9">整体评价</text>
 					</view>
-					<view class="text-wrapper_3 flex-col">
+					<view :class="'text-wrapper_3 flex-col ' + (tagList.includes('沟通情况') ? 'text_h' : '')" @click="handleTag('沟通情况')">
 						<text class="text_10">沟通情况</text>
 					</view>
-					<view class="text-wrapper_4 flex-col">
+					<view :class="'text-wrapper_4 flex-col ' + (tagList.includes('卫生服务') ? 'text_h' : '')" @click="handleTag('卫生服务')">
 						<text class="text_11">卫生服务</text>
 					</view>
-					<view class="text-wrapper_5 flex-col">
+					<view :class="'text-wrapper_5 flex-col ' + (tagList.includes('服务态度') ? 'text_h' : '')" @click="handleTag('服务态度')">
 						<text class="text_12">服务态度</text>
 					</view>
 				</view>
-				<textarea class="text_13" placeholder="展开说说对陪诊员的想法吧…" />
+				<textarea class="text_13" placeholder="展开说说对陪诊员的想法吧…" :value="content" />
 				<view class="group_15 flex-row justify-between">
 					<view class="text-wrapper_6 flex-col" @click="back">
 						<text class="text_14">取消</text>
@@ -59,23 +60,34 @@ export default {
 	data() {
 		return {
 			constants: {},
+			tagList: [],
+			content: '',
+			rate: 5,
 		}
 	},
 	methods: {
-    back(){
-      uni.navigateBack()
-    },
-    handleSubmit(){
-      uni.showToast({
-        title: '评论成功',
-        icon: 'none',
-        duration:1000,
-      })
-      setTimeout(() => {
-        uni.reLaunch({ url: '/pages/home/home' })
-      }, 1000);
-    }
-  },
+		back() {
+			uni.navigateBack()
+		},
+		handleTag(val) {
+			if (this.tagList.includes(val)) {
+				this.tagList.splice(this.tagList.indexOf(val), 1)
+			} else {
+				this.tagList.push(val)
+			}
+			this.content = this.tagList.join('\n')
+		},
+		handleSubmit() {
+			uni.showToast({
+				title: '评论成功',
+				icon: 'none',
+				duration: 1000,
+			})
+			setTimeout(() => {
+				uni.reLaunch({ url: '/pages/home/home' })
+			}, 1000)
+		},
+	},
 }
 </script>
 <style scoped lang="scss">
@@ -443,5 +455,9 @@ export default {
 			}
 		}
 	}
+}
+
+.text_h {
+	border: 2rpx solid #51bba4 !important;
 }
 </style>

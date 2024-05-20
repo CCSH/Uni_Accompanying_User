@@ -21,7 +21,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="box_6 flex-col" @click="gotoDetail">
+			<view class="box_6 flex-col">
 				<view class="block_6 flex-row justify-between">
 					<view class="image-text_14 flex-row justify-between">
 						<view class="group_4 flex-col"></view>
@@ -37,7 +37,7 @@
 					<text class="text_11">半天陪诊</text>
 					<text class="text_12">￥&nbsp;268.00</text>
 				</view>
-				<view class="text-wrapper_23 flex-row justify-between">
+				<view class="text-wrapper_23 flex-row justify-between" @click="gotoDetail">
 					<text class="paragraph_1">
 						<text style="display: block">就诊人：</text>
 						<br />
@@ -78,7 +78,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="box_6 flex-col" @click="gotoDetail">
+			<view class="box_6 flex-col">
 				<view class="block_6 flex-row justify-between">
 					<view class="image-text_14 flex-row justify-between">
 						<view class="group_4 flex-col"></view>
@@ -94,7 +94,7 @@
 					<text class="text_11">半天陪诊</text>
 					<text class="text_12">￥&nbsp;268.00</text>
 				</view>
-				<view class="text-wrapper_23 flex-row justify-between">
+				<view class="text-wrapper_23 flex-row justify-between" @click="gotoDetail">
 					<text class="paragraph_1">
 						<text style="display: block">就诊人：</text>
 						<br />

@@ -4,6 +4,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/pages/submit_comment/submit_comment",
+          "pathName": "pagesA/pages/submit_comment/submit_comment",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/pages/submit_order/submit_order",
           "pathName": "pagesA/pages/submit_order/submit_order",
           "query": "",
