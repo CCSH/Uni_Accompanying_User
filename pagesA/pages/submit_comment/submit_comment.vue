@@ -24,7 +24,7 @@
 						<uni-rate class="thumbnail_12" size="18" v-model="rate" />
 						<!-- <image class="thumbnail_12" referrerpolicy="no-referrer" src="/static/wuxing@2x.png" /> -->
 						<view class="image-text_13 flex-row justify-between">
-							<text class="text_8">{{ rate == 1 ? '非常不满意' : rate == 2 ? '不满意' : rate == 3 ? '好' : rate == 4 ? '很好' : rate == 5 ? '非常好' : '' }}</text>
+							<text class="text_8">{{ rate == 1 ? '非常差' : rate == 2 ? '差' : rate == 3 ? '一般' : rate == 4 ? '很好' : rate == 5 ? '非常好' : '' }}</text>
 						</view>
 					</view>
 				</view>
@@ -82,10 +82,10 @@ export default {
 				title: '评论成功',
 				icon: 'none',
 				duration: 1000,
+				success: () => {
+					uni.reLaunch({ url: '/pages/home/home' })
+				},
 			})
-			setTimeout(() => {
-				uni.reLaunch({ url: '/pages/home/home' })
-			}, 1000)
 		},
 	},
 }
