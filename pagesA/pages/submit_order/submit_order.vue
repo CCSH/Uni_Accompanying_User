@@ -280,7 +280,7 @@
 						<text class="text_4">本人</text>
 						<text class="text_5">193****95</text>
 					</view>
-					<image class="thumbnail_2" referrerpolicy="no-referrer" src="/static/bianji@2x.png" />
+					<image class="thumbnail_2" referrerpolicy="no-referrer" src="/static/bianji@2x.png" @click="gotoEdit" />
 				</view>
 				<view
 					class="block_4 flex-row"
@@ -487,6 +487,12 @@ export default {
 		}
 	},
 	methods: {
+		gotoEdit() {
+			this.$refs.popup_patient.close()
+			uni.navigateTo({
+				url: '/pagesA/pages/add_client/add_client?edit=true',
+			})
+		},
 		showAgreement() {
 			uni.navigateTo({ url: '/pagesA/pages/privacy_agreement/privacy_agreement' })
 		},
